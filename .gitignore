@@ -18,3 +18,5 @@ cache/
 
 # Vercel
 .vercel/
+
+.vercel

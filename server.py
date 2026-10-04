@@ -65,7 +65,6 @@ def _check_macd_alert(latest_row, df: pd.DataFrame) -> dict:
     """MACD 데드크로스/골든크로스 감지"""
     macd = float(latest_row.get('MACD_12_26_9', 0) or 0)
     signal = float(latest_row.get('MACDs_12_26_9', 0) or 0)
-
     if len(df) >= 2:
         prev = df.iloc[-2]
         prev_macd = float(prev.get('MACD_12_26_9', 0) or 0)
