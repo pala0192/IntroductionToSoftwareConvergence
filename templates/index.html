@@ -251,17 +251,19 @@ function renderResult(d){
 
   <div class="row4">
     <div class="mini-card"><div class="mk">📰 뉴스</div><div class="mv" style="color:${gc(brkd.news||0)}">${(brkd.news||0)>=0?'+':''}${(brkd.news||0).toFixed(2)}</div></div>
-    <div class="mini-card"><div class="mk">📈 기술</div><div class="mv" style="color:${gc(brkd.technical||0)}">${(brkd.technical||0)>=0?'+':''}${(brkd.technical||0).toFixed(2)}</div></div>
-    <div class="mini-card"><div class="mk">📉 지표</div><div class="mv" style="color:${gc(brkd.indicator||0)}">${(brkd.indicator||0)>=0?'+':''}${(brkd.indicator||0).toFixed(2)}</div></div>
-    <div class="mini-card"><div class="mk">🎲 옵션</div><div class="mv" style="color:${gc(brkd.options||0)}">${(brkd.options||0)>=0?'+':''}${(brkd.options||0).toFixed(2)}</div></div>
+    <div class="mini-card"><div class="mk">📈 기술 (추세)</div><div class="mv" style="color:${gc(brkd.technical||0)}">${(brkd.technical||0)>=0?'+':''}${(brkd.technical||0).toFixed(2)}</div></div>
+    <div class="mini-card"><div class="mk">📉 지표 (오실레이터)</div><div class="mv" style="color:${gc(brkd.indicator||0)}">${(brkd.indicator||0)>=0?'+':''}${(brkd.indicator||0).toFixed(2)}</div></div>
+    ${brkd.options!=null
+      ? `<div class="mini-card"><div class="mk">🎲 옵션</div><div class="mv" style="color:${gc(brkd.options)}">${brkd.options>=0?'+':''}${brkd.options.toFixed(2)}</div></div>`
+      : `<div class="mini-card"><div class="mk">🎲 통계 확률 (HV)</div><div class="mv" style="color:${pc(vol.hist_probability||0)}">${vol.hist_probability||0}%</div></div>`}
   </div>
+  <div style="text-align:center;font-size:.68rem;color:#8b949e">실현가능성 = 모델 ${d.model_probability}% × 50% + 통계 ${vol.hist_probability||0}% × 50%</div>
 
   <hr class="divider">
   <div class="prow"><span>현재가</span><span class="pv">${(d.current_price||0).toLocaleString()}</span></div>
   <div class="prow"><span>목표가</span><span class="pv g">+${interp.expected_return_pct?.toFixed(2)||0}% → ${(interp.target_price||0).toLocaleString()}</span></div>
   <div class="prow"><span>손절가</span><span class="pv r">-${interp.risk_pct?.toFixed(2)||0}% → ${(interp.stop_loss||0).toLocaleString()}</span></div>
-  <div class="prow"><span>역사적 변동성</span><span class="pv">${vol.hist_vol_pct||0}%/yr</span></div>
-  <div class="prow"><span>통계 확률</span><span class="pv">${vol.hist_probability||0}%</span></div>`;
+  <div class="prow"><span>역사적 변동성</span><span class="pv">${vol.hist_vol_pct||0}%/yr</span></div>`;
 
   if(news.count>0){
     h+=`<hr class="divider"><div style="font-size:.7rem;color:#8b949e;margin-bottom:4px">📰 뉴스 감성: <b style="color:${gc(news.score||0)}">${news.sentiment||'중립'}</b> · ${news.count}건</div>`;

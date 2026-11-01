@@ -9,40 +9,7 @@ from datetime import datetime
 from config import Config, HOLDING_PERIODS, period_label_to_days
 from data_loader import MarketDataLoader
 from indicators import IndicatorEngine
-
-def normalize_score(series, method='default'):
-    """기본적인 정규화 함수 (analyzer.py와 동일한 로직 적용)"""
-    if method == 'rsi':
-        return np.clip((50 - series) / 20.0, -1.0, 1.0)
-    return np.clip(series, -1.0, 1.0)
-
-def calculate_base_scores(df: pd.DataFrame) -> pd.DataFrame:
-    """보조지표들을 -1.0 ~ +1.0 사이의 매수/매도 스코어로 변환합니다."""
-    scores = pd.DataFrame(index=df.index)
-    
-    # RSI (30이하 매수, 70이상 매도)
-    scores['rsi'] = np.clip((50 - df['RSI_14']) / 20.0, -1.0, 1.0)
-    
-    # Stochastic
-    scores['stoch'] = np.clip((df['STOCHk_14_3_3'] - df['STOCHd_14_3_3']) / 10.0, -1.0, 1.0)
-    
-    # MACD
-    scores['macd'] = np.clip((df['MACD_12_26_9'] - df['MACDs_12_26_9']) / (df['MACD_12_26_9'].abs() + 0.001), -1.0, 1.0)
-    
-    # Bollinger Bands
-    mid = (df['BBL_20_2.0'] + df['BBU_20_2.0']) / 2
-    scores['bollinger'] = np.clip((mid - df['Close']) / (df['BBU_20_2.0'] - df['BBL_20_2.0']) * 2, -1.0, 1.0)
-    
-    # EMA
-    scores['ema20'] = np.clip(((df['Close'] - df['EMA_20']) / df['EMA_20'] * 100) / 5.0, -1.0, 1.0)
-    scores['ema60'] = np.clip(((df['Close'] - df['EMA_60']) / df['EMA_60'] * 100) / 5.0, -1.0, 1.0)
-    scores['ema120'] = np.clip(((df['Close'] - df['EMA_120']) / df['EMA_120'] * 100) / 5.0, -1.0, 1.0)
-    
-    # ATR (변동성 모멘텀)
-    price_momentum = df['Close'] - df['Close'].shift(20)
-    scores['atr'] = np.clip(price_momentum / (df['ATRr_14'] + 0.001), -1.0, 1.0).fillna(0)
-    
-    return scores
+from analyzer import StrategyAnalyzer, SIGNAL_FEATURES
 
 def optimize_ticker_weights(ticker: str, config: Config, iterations: int = 2000):
     """
@@ -60,8 +27,9 @@ def optimize_ticker_weights(ticker: str, config: Config, iterations: int = 2000)
         print(f"데이터 로드 실패: {e}")
         return
         
-    scores_df = calculate_base_scores(df)
-    features = ['rsi', 'stoch', 'macd', 'bollinger', 'ema20', 'ema60', 'ema120', 'atr']
+    # 분석 서버와 동일한 신호 점수 사용
+    scores_df = StrategyAnalyzer.compute_signal_scores(df)
+    features = SIGNAL_FEATURES
     
     # 2. 단기/장기 보유 기간에 대해 최적화 진행
     for period_label, days in HOLDING_PERIODS.items():

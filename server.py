@@ -25,7 +25,7 @@ from flask_cors import CORS
 from config import Config
 from data_loader import MarketDataLoader
 from indicators import IndicatorEngine
-from analyzer import StrategyAnalyzer, ConsultingInterpreter
+from analyzer import StrategyAnalyzer, ConsultingInterpreter, TREND_FEATURES, OSCILLATOR_FEATURES
 from news_analyzer import NewsAnalyzer
 from options_analyzer import OptionsAnalyzer
 from probability_engine import ProbabilityEngine
@@ -205,9 +205,9 @@ def analyze():
         # 종목+기간별 저장된 신호 가중치 조회 (머신러닝 결과 또는 기간별 기본값)
         ticker_weights = config.get_ticker_period_weights(ticker, period_label)
 
-        # 5. 기술지표 점수 (독립 가중치 항상 적용)
-        tech_score = ProbabilityEngine.apply_ticker_weights(latest, ticker_weights)
-        indicator_score = tech_score
+        # 5. 기술(추세) / 지표(오실레이터) 점수 — 학습 가중치를 그룹별로 적용
+        tech_score = ProbabilityEngine.apply_ticker_weights(latest, ticker_weights, TREND_FEATURES)
+        indicator_score = ProbabilityEngine.apply_ticker_weights(latest, ticker_weights, OSCILLATOR_FEATURES)
 
         # 6. 확률 종합 계산
         result = ProbabilityEngine.compute(
@@ -218,7 +218,6 @@ def analyze():
             target_return_pct=target_return_pct,
             holding_days=holding_days,
             hist_vol_probability=hist_prob,
-            ticker_weights=ticker_weights,
         )
 
         # 7. MACD 알림
@@ -249,6 +248,7 @@ def analyze():
             'weights_used': result['weights_used'],
             'ticker_weights': ticker_weights,
             'breakdown': result['breakdown'],
+            'model_probability': result['model_probability'],
             # 뉴스
             'news': {
                 'score': round(news_score, 3),

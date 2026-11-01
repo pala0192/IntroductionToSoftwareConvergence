@@ -2,51 +2,72 @@ import pandas as pd
 import numpy as np
 from config import Config
 
+# 신호 그룹: 기술(추세/모멘텀) vs 지표(오실레이터)
+TREND_FEATURES = ['macd', 'ema20', 'ema60', 'ema120', 'atr']
+OSCILLATOR_FEATURES = ['rsi', 'stoch', 'bollinger']
+SIGNAL_FEATURES = OSCILLATOR_FEATURES + TREND_FEATURES
+
+
+def score_col(feature: str) -> str:
+    return f'score_{feature}'
+
+
 class StrategyAnalyzer:
     def __init__(self, config: Config):
         self.config = config
         
-    def _normalize_rsi(self, rsi_series):
+    @staticmethod
+    def _normalize_rsi(rsi_series):
         # RSI 30 이하 과매도(매수시그널 +1), 70 이상 과매수(매도시그널 -1)
         score = (50 - rsi_series) / 20.0
         return np.clip(score, -1.0, 1.0)
-        
-    def _normalize_stoch(self, k_series, d_series):
+
+    @staticmethod
+    def _normalize_stoch(k_series, d_series):
         # K가 D를 상향 돌파하면 매수, 하향 돌파하면 매도
         diff = k_series - d_series
         return np.clip(diff / 10.0, -1.0, 1.0)
-        
-    def _normalize_macd(self, macd_series, signal_series):
+
+    @staticmethod
+    def _normalize_macd(macd_series, signal_series):
         diff = macd_series - signal_series
         return np.clip(diff / (macd_series.abs() + 0.001), -1.0, 1.0)
-        
-    def _normalize_bollinger(self, price_series, lower_series, upper_series):
+
+    @staticmethod
+    def _normalize_bollinger(price_series, lower_series, upper_series):
         # 하단 터치 시 +1, 상단 터치 시 -1
         mid = (lower_series + upper_series) / 2
         score = (mid - price_series) / (upper_series - lower_series) * 2
         return np.clip(score, -1.0, 1.0)
 
-    def _normalize_ema(self, price_series, ema_series):
+    @staticmethod
+    def _normalize_ema(price_series, ema_series):
         diff_pct = (price_series - ema_series) / ema_series * 100
         return np.clip(diff_pct / 5.0, -1.0, 1.0)
 
-    def generate_signals(self, df: pd.DataFrame) -> pd.DataFrame:
-        """전체 데이터프레임에 대해 매매 스코어를 산출합니다. (Vectorization 적용으로 속도 10배 향상)"""
-        df = df.copy()
-        
-        # 보조지표 정규화 (Vectorized)
-        rsi_score = self._normalize_rsi(df['RSI_14'])
-        stoch_score = self._normalize_stoch(df['STOCHk_14_3_3'], df['STOCHd_14_3_3'])
-        macd_score = self._normalize_macd(df['MACD_12_26_9'], df['MACDs_12_26_9'])
-        bb_score = self._normalize_bollinger(df['Close'], df['BBL_20_2.0'], df['BBU_20_2.0'])
-        ema20_score = self._normalize_ema(df['Close'], df['EMA_20'])
-        ema60_score = self._normalize_ema(df['Close'], df['EMA_60'])
-        ema120_score = self._normalize_ema(df['Close'], df['EMA_120'])
-        
+    @classmethod
+    def compute_signal_scores(cls, df: pd.DataFrame) -> pd.DataFrame:
+        """신호별 -1~+1 점수 (학습/분석 공통 단일 소스)"""
+        scores = pd.DataFrame(index=df.index)
+        scores['rsi'] = cls._normalize_rsi(df['RSI_14'])
+        scores['stoch'] = cls._normalize_stoch(df['STOCHk_14_3_3'], df['STOCHd_14_3_3'])
+        scores['macd'] = cls._normalize_macd(df['MACD_12_26_9'], df['MACDs_12_26_9'])
+        scores['bollinger'] = cls._normalize_bollinger(df['Close'], df['BBL_20_2.0'], df['BBU_20_2.0'])
+        scores['ema20'] = cls._normalize_ema(df['Close'], df['EMA_20'])
+        scores['ema60'] = cls._normalize_ema(df['Close'], df['EMA_60'])
+        scores['ema120'] = cls._normalize_ema(df['Close'], df['EMA_120'])
+
         # [허점 2 수정] ATR 편향 오류 수정: 가격의 20일 변동 방향성을 ATR로 나누어 방향과 변동성을 동시 고려
         price_momentum = df['Close'] - df['Close'].shift(20)
-        atr_score = np.clip(price_momentum / (df['ATRr_14'] + 0.001), -1.0, 1.0).fillna(0)
-        
+        scores['atr'] = np.clip(price_momentum / (df['ATRr_14'] + 0.001), -1.0, 1.0).fillna(0)
+        return scores
+
+    def generate_signals(self, df: pd.DataFrame) -> pd.DataFrame:
+        """전체 데이터프레임에 신호별 점수 컬럼(score_*)을 추가합니다. (Vectorized)"""
+        df = df.copy()
+        scores = self.compute_signal_scores(df)
+        for f in SIGNAL_FEATURES:
+            df[score_col(f)] = scores[f]
         return df
 
 class ConsultingInterpreter:
