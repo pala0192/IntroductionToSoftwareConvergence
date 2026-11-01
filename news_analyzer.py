@@ -13,9 +13,13 @@ from google import genai
 from google.genai import types
 
 
+DEFAULT_GEMINI_MODEL = 'gemini-3.8-flash'
+
+
 class NewsAnalyzer:
     def __init__(self, api_key: str = None):
         self.api_key = api_key or os.environ.get('GEMINI_API_KEY', '')
+        self.model = os.environ.get('GEMINI_MODEL', DEFAULT_GEMINI_MODEL)
         self.naver_client_id = os.environ.get('NAVER_CLIENT_ID', '')
         self.naver_client_secret = os.environ.get('NAVER_CLIENT_SECRET', '')
         
@@ -23,7 +27,7 @@ class NewsAnalyzer:
         if self.api_key:
             try:
                 self.client = genai.Client(api_key=self.api_key)
-                print("[NewsAnalyzer] Gemini API 연결 성공")
+                print(f"[NewsAnalyzer] Gemini API 연결 성공 (모델: {self.model})")
             except Exception as e:
                 print(f"[NewsAnalyzer] Gemini API 연결 실패: {e}")
         else:
@@ -167,7 +171,7 @@ score 기준: -1.0(매우 부정) ~ 0.0(중립) ~ +1.0(매우 긍정)"""
 
             try:
                 response = self.client.models.generate_content(
-                    model='gemini-2.0-flash',
+                    model=self.model,
                     contents=prompt
                 )
                 text = response.text.strip()

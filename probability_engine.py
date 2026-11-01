@@ -94,8 +94,6 @@ class ProbabilityEngine:
             # 기술 지표 비중을 높여 최적화 결과가 강하게 반영되도록 함
             weights['technical'] = 0.50
             weights['indicator'] = 0.20
-            # 옵션 비중 축소, 뉴스 비중 유지
-            pass
 
         # 옵션 점수 (-1~+1 변환)
         if options_probability is not None:
@@ -108,6 +106,10 @@ class ProbabilityEngine:
             options_score = 0.0
             weights['indicator'] += weights['options']
             weights['options'] = 0.0
+
+        # 덮어쓰기 이후 합계가 1이 되도록 정규화
+        total_w = sum(weights.values()) or 1.0
+        weights = {k: v / total_w for k, v in weights.items()}
 
         # 가중 종합 매수/매도 점수
         buy_sell_score = (
