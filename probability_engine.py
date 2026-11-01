@@ -10,20 +10,19 @@ class ProbabilityEngine:
     입력: 기술지표 점수, 뉴스 감성 점수, 옵션 확률, 목표 수익률, 홀딩 기간
     출력: feasibility_pct (0~100), buy_sell_score (-1~+1)
     
-    기간별 가중치:
+    기간별 가중치 (거래일 기준):
       단기(≤30일):  뉴스 30% / 기술지표 40% / 보조지표 25% / 옵션  5%
-      중기(≤180일): 뉴스 25% / 기술지표 30% / 보조지표 25% / 옵션 20%
-      장기(>180일): 뉴스 15% / 기술지표 15% / 보조지표 20% / 옵션 50%
+      장기(>30일):  뉴스 25% / 기술지표 30% / 보조지표 25% / 옵션 20%  ← 우선 중기 가중치 사용
     """
 
-    @staticmethod
-    def get_time_weights(holding_days: int) -> dict:
+    SHORT_TIME_WEIGHTS = {'news': 0.30, 'technical': 0.40, 'indicator': 0.25, 'options': 0.05}
+    MID_TIME_WEIGHTS   = {'news': 0.25, 'technical': 0.30, 'indicator': 0.25, 'options': 0.20}
+
+    @classmethod
+    def get_time_weights(cls, holding_days: float) -> dict:
         if holding_days <= 30:
-            return {'news': 0.30, 'technical': 0.40, 'indicator': 0.25, 'options': 0.05}
-        elif holding_days <= 180:
-            return {'news': 0.25, 'technical': 0.30, 'indicator': 0.25, 'options': 0.20}
-        else:
-            return {'news': 0.15, 'technical': 0.15, 'indicator': 0.20, 'options': 0.50}
+            return cls.SHORT_TIME_WEIGHTS.copy()
+        return cls.MID_TIME_WEIGHTS.copy()
 
     @staticmethod
     def sigmoid(x: float, scale: float = 2.5) -> float:
@@ -139,12 +138,8 @@ class ProbabilityEngine:
         feasibility_pct = float(np.clip(feasibility_pct, 1.0, 99.0))
 
         # 기간 레이블
-        if holding_days <= 30:
-            period_label = f"단기 ({holding_days}일)"
-        elif holding_days <= 180:
-            period_label = f"중기 ({holding_days}일)"
-        else:
-            period_label = f"장기 ({holding_days}일)"
+        term = '단기' if holding_days <= 30 else '장기'
+        period_label = f"{term} ({int(holding_days)}거래일 · 목표 {target_return_pct:+g}%)"
 
         return {
             'feasibility_pct': round(feasibility_pct, 1),

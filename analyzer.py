@@ -51,7 +51,7 @@ class StrategyAnalyzer:
 
 class ConsultingInterpreter:
     @staticmethod
-    def interpret(row, holding_days=30):
+    def interpret(row, holding_days=20, target_return_pct=5.0):
         """특정 시점의 데이터를 바탕으로 자연어 해석과 기대 수익을 산출합니다."""
         feedback = []
         
@@ -81,18 +81,9 @@ class ConsultingInterpreter:
         elif macd < signal and macd < 0:
             feedback.append("📉 [MACD(12D-26D-9D)] MACD가 시그널 선 아래 위치하여 하락 추세가 진행 중입니다.")
 
-        # 4. 목표가 및 기대 수익률 산출 (ATR 기반)
-        atr = row['ATRr_14']
-        # 기간에 따라 변동폭 승수(Multiplier)를 다르게 가져감
-        if holding_days <= 7:
-            multiplier = 1.5
-        elif holding_days <= 84:
-            multiplier = 3.0
-        else:
-            multiplier = 5.0
-            
-        target_price = price + (atr * multiplier)
-        stop_loss = price - (atr * multiplier * 0.5) # 손익비 2:1 가정
+        # 4. 목표가 및 손절가 산출 (기간별 고정 목표 수익률 기준)
+        target_price = price * (1 + target_return_pct / 100.0)
+        stop_loss = price * (1 - target_return_pct / 100.0 * 0.5) # 손익비 2:1 가정
         
         expected_return_pct = (target_price - price) / price * 100
         risk_pct = (price - stop_loss) / price * 100

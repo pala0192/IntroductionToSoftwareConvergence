@@ -41,14 +41,11 @@ body{font-family:'Outfit',sans-serif;background:#0d1117;color:#e6edf3;height:100
 .pop-sect h3{font-size:.72rem;font-weight:600;color:#8b949e;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
 label{display:block;font-size:.78rem;color:#8b949e;margin-bottom:3px;margin-top:8px}
 
-.period-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:4px}
-.period-btn{background:#0d1117;border:1px solid var(--bd);color:#8b949e;padding:5px 0;border-radius:6px;font-family:'Outfit',sans-serif;font-size:.72rem;cursor:pointer;text-align:center;transition:all .15s}
+.period-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px}
+.period-btn{background:#0d1117;border:1px solid var(--bd);color:#8b949e;padding:8px 0;border-radius:8px;font-family:'Outfit',sans-serif;font-size:.85rem;cursor:pointer;text-align:center;transition:all .15s}
+.period-btn small{display:block;font-size:.68rem;font-weight:400;margin-top:2px;opacity:.8}
 .period-btn:hover{border-color:var(--ac);color:#e6edf3}
 .period-btn.active{background:rgba(124,58,237,.2);border-color:var(--ac);color:var(--ac);font-weight:600}
-
-.return-row{display:flex;align-items:center;gap:8px;margin-top:4px}
-.return-row input[type=range]{flex:1;accent-color:var(--ac)}
-.return-row input[type=number]{width:64px;background:#0d1117;border:1px solid var(--bd);color:#e6edf3;padding:5px 8px;border-radius:6px;font-family:'Outfit',sans-serif;font-size:.82rem;outline:none}
 
 #run-btn{width:100%;margin-top:12px;padding:10px;background:linear-gradient(135deg,#7c3aed,#5b21b6);border:none;border-radius:8px;color:#fff;font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px}
 #run-btn:hover{box-shadow:0 4px 16px rgba(124,58,237,.4)}
@@ -110,13 +107,7 @@ label{display:block;font-size:.78rem;color:#8b949e;margin-bottom:3px;margin-top:
   <div class="pop-sect">
     <h3>🎯 투자 시나리오</h3>
 
-    <label>목표 수익률 (%)</label>
-    <div class="return-row">
-      <input type="range" id="ret-range" min="-50" max="100" value="10" step="1" oninput="document.getElementById('ret-num').value=this.value">
-      <input type="number" id="ret-num" value="10" min="-50" max="100" oninput="document.getElementById('ret-range').value=this.value">
-    </div>
-
-    <label>홀딩 기간</label>
+    <label>홀딩 기간 · 목표 수익률</label>
     <div class="period-grid" id="period-grid"></div>
   </div>
 
@@ -133,20 +124,22 @@ label{display:block;font-size:.78rem;color:#8b949e;margin-bottom:3px;margin-top:
 </div>
 
 <script>
-const PERIODS = ['6h','12h','1d','3d','7d','2w','4w','6w','8w','10w','12w','14w','16w','18w','20w','22w','24w','26w','28w','30w'];
-let selPeriod = '4w';
+let selPeriod = 'short';
 let popOpen = false;
 let macdTimer = null;
 let currentTicker = '373220.KS';
 
-/* 기간 버튼 생성 */
+/* 기간 버튼 생성 (단기/장기 고정, 목표 수익률은 서버 설정값) */
 const grid = document.getElementById('period-grid');
-PERIODS.forEach(p => {
-  const b = document.createElement('button');
-  b.className = 'period-btn' + (p === selPeriod ? ' active' : '');
-  b.textContent = p;
-  b.onclick = () => { selPeriod = p; grid.querySelectorAll('.period-btn').forEach(x=>x.classList.remove('active')); b.classList.add('active'); };
-  grid.appendChild(b);
+fetch('/api/periods').then(r=>r.json()).then(d=>{
+  if(!d.success) return;
+  d.periods.forEach(p => {
+    const b = document.createElement('button');
+    b.className = 'period-btn' + (p.label === selPeriod ? ' active' : '');
+    b.innerHTML = `${p.name}<small>${p.days}거래일 · 목표 +${p.target_return_pct}%</small>`;
+    b.onclick = () => { selPeriod = p.label; grid.querySelectorAll('.period-btn').forEach(x=>x.classList.remove('active')); b.classList.add('active'); };
+    grid.appendChild(b);
+  });
 });
 
 /* 관심 종목 로드 */
@@ -186,7 +179,6 @@ const bw = v => Math.round((v+1)/2*100);
 
 async function runAnalysis(){
   const ticker = document.getElementById('wl-sel').value.trim().toUpperCase();
-  const targetReturn = parseFloat(document.getElementById('ret-num').value);
   if(!ticker){ alert('종목을 선택하세요'); return; }
 
   const btn = document.getElementById('run-btn');
@@ -195,7 +187,7 @@ async function runAnalysis(){
 
   try{
     const r = await fetch('/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({ticker, target_return_pct:targetReturn, period_label:selPeriod})});
+      body:JSON.stringify({ticker, period_label:selPeriod})});
     const d = await r.json();
     if(!d.success) throw new Error(d.error);
     currentTicker = ticker;

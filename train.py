@@ -63,12 +63,11 @@ def optimize_ticker_weights(ticker: str, config: Config, iterations: int = 2000)
     scores_df = calculate_base_scores(df)
     features = ['rsi', 'stoch', 'macd', 'bollinger', 'ema20', 'ema60', 'ema120', 'atr']
     
-    # 2. 모든 보유 기간에 대해 최적화 진행
+    # 2. 단기/장기 보유 기간에 대해 최적화 진행
     for period_label, days in HOLDING_PERIODS.items():
-        shift_days = int(days)
-        if shift_days < 1: shift_days = 1
-        
-        # 미래 수익률 계산
+        shift_days = max(1, int(days))
+
+        # 미래 수익률 계산 (거래일 기준)
         fwd_return = df['Close'].shift(-shift_days) / df['Close'] - 1.0
         
         valid_idx = fwd_return.dropna().index
@@ -121,7 +120,7 @@ if __name__ == '__main__':
     
     print("==================================================")
     print(" 🧠 퀀트 가중치 머신러닝(랜덤서치) 최적화 엔진")
-    print(" 지정된 5개 종목 및 20개 기간에 대한 학습을 시작합니다.")
+    print(f" 지정된 5개 종목 및 {len(HOLDING_PERIODS)}개 기간({', '.join(HOLDING_PERIODS)})에 대한 학습을 시작합니다.")
     print("==================================================")
     
     config = Config()

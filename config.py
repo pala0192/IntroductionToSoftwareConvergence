@@ -4,48 +4,46 @@ config.py - 시장별 + 종목별 + 기간별 가중치 관리
 import json
 import os
 
-# 사전 정의 홀딩 기간 (표시 레이블 → 일수 변환)
+# 고정 홀딩 기간 (레이블 → 거래일 수)
+# 일수는 모두 '거래일' 기준 (OptionsAnalyzer의 T=days/252, train.py의 shift(-days)와 일치)
 HOLDING_PERIODS = {
-    '6h':  0.25,
-    '12h': 0.5,
-    '1d':  1,
-    '3d':  3,
-    '7d':  7,
-    '2w':  14,
-    '4w':  28,
-    '6w':  42,
-    '8w':  56,
-    '10w': 70,
-    '12w': 84,
-    '14w': 98,
-    '16w': 112,
-    '18w': 126,
-    '20w': 140,
-    '22w': 154,
-    '24w': 168,
-    '26w': 182,
-    '28w': 196,
-    '30w': 210,
+    'short': 20,    # 단기: 약 1개월
+    'long':  100,   # 장기: 약 5개월
 }
 
+# 기간별 고정 목표 수익률 (%)
+TARGET_RETURNS = {
+    'short': 5.0,
+    'long':  13.0,
+}
+
+PERIOD_NAMES = {
+    'short': '단기',
+    'long':  '장기',
+}
+
+DEFAULT_PERIOD = 'short'
+
+
 def period_label_to_days(label: str) -> float:
-    """'6h' → 0.25, '2w' → 14 등 변환"""
-    return HOLDING_PERIODS.get(label, 30)
+    """'short' → 20, 'long' → 100 (거래일)"""
+    return HOLDING_PERIODS.get(label, HOLDING_PERIODS[DEFAULT_PERIOD])
 
 
+def target_return_for(label: str) -> float:
+    """기간 레이블별 고정 목표 수익률(%)"""
+    return TARGET_RETURNS.get(label, TARGET_RETURNS[DEFAULT_PERIOD])
 
-def _default_weights_for_days(days: float) -> dict:
-    """기간별 기본 신호 가중치"""
-    if days <= 1:           # 초단기
-        return {'rsi': 0.20, 'stoch': 0.35, 'bollinger': 0.25, 'macd': 0.20}
-    elif days <= 7:         # 단기
-        return {'rsi': 0.30, 'stoch': 0.30, 'bollinger': 0.20, 'macd': 0.20}
-    elif days <= 28:        # 중단기
-        return {'macd': 0.40, 'ema20': 0.30, 'rsi': 0.20, 'bollinger': 0.10}
-    elif days <= 84:        # 중기
-        return {'macd': 0.35, 'ema20': 0.25, 'ema60': 0.20, 'rsi': 0.20}
-    else:                   # 장기
-        return {'ema60': 0.35, 'ema120': 0.25, 'macd': 0.20, 'atr': 0.20}
+
+# 기간별 기본 신호 가중치 (장기는 우선 중기 가중치 사용)
+_DEFAULT_SIGNAL_WEIGHTS = {
+    'short': {'macd': 0.40, 'ema20': 0.30, 'rsi': 0.20, 'bollinger': 0.10},   # 중단기
+    'long':  {'macd': 0.35, 'ema20': 0.25, 'ema60': 0.20, 'rsi': 0.20},       # 중기
+}
+
+
+def _default_weights_for(label: str) -> dict:
+    return _DEFAULT_SIGNAL_WEIGHTS.get(label, _DEFAULT_SIGNAL_WEIGHTS[DEFAULT_PERIOD]).copy()
 
 
 class Config:
@@ -55,11 +53,8 @@ class Config:
         self.investment_mode = 'AUTO'
         self.initial_capital = 10_000_000
 
-        # 20개의 지정된 기간별 독립 가중치 저장소
-        self.base_weights = {
-            label: _default_weights_for_days(days) 
-            for label, days in HOLDING_PERIODS.items()
-        }
+        # 기간(단기/장기)별 독립 가중치 저장소
+        self.base_weights = {label: _default_weights_for(label) for label in HOLDING_PERIODS}
 
         # 종목별 + 기간별 가중치: {ticker: {period_label: {signal: weight}}}
         self._ticker_weights: dict = {}
@@ -79,8 +74,7 @@ class Config:
         종목+기간별 저장된 가중치를 반환.
         없으면 기간별 기본 가중치 반환.
         """
-        days = period_label_to_days(period_label)
-        default = self.base_weights.get(period_label, _default_weights_for_days(days))
+        default = self.base_weights.get(period_label, _default_weights_for(period_label))
         return self._ticker_weights.get(ticker, {}).get(period_label, default).copy()
 
     def update_ticker_period_weights(self, ticker: str, period_label: str, new_weights: dict):

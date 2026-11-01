@@ -5,7 +5,8 @@ server.py - 퀀트 트레이딩 분석 Flask REST API 서버
 """
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
-from config import HOLDING_PERIODS, period_label_to_days
+from config import (HOLDING_PERIODS, TARGET_RETURNS, PERIOD_NAMES, DEFAULT_PERIOD,
+                    period_label_to_days, target_return_for)
 
 import os
 import json
@@ -162,20 +163,24 @@ def watchlist():
 def analyze():
     """
     메인 분석 엔드포인트
-    Input (JSON): { ticker, target_return_pct, holding_days }
+    Input (JSON): { ticker, period_label: 'short' | 'long' }
+    목표 수익률은 기간별로 고정 (config.TARGET_RETURNS)
     Output: 실현가능성%, 매수매도 점수, 분석 세부내역, 차트 데이터
     """
     try:
         data = request.get_json(force=True)
         ticker            = str(data.get('ticker', '373220.KS')).strip().upper()
-        target_return_pct = float(data.get('target_return_pct', 10.0))
-        period_label      = str(data.get('period_label', '4w'))   # 사전정의 기간 레이블
-        holding_days      = period_label_to_days(period_label)     # float(일수)
+        period_label      = str(data.get('period_label', DEFAULT_PERIOD))
 
         if not ticker:
             return jsonify({'success': False, 'error': '티커를 입력해주세요'}), 400
+        if period_label not in HOLDING_PERIODS:
+            return jsonify({'success': False, 'error': f"기간은 {list(HOLDING_PERIODS)} 중 하나여야 합니다"}), 400
 
-        print(f"\n[Server] 분석 요청: {ticker} | 목표수익 {target_return_pct}% | {period_label}({holding_days}일)")
+        holding_days      = period_label_to_days(period_label)     # 거래일
+        target_return_pct = target_return_for(period_label)
+
+        print(f"\n[Server] 분석 요청: {ticker} | {PERIOD_NAMES[period_label]}({holding_days}거래일) | 목표수익 {target_return_pct}%")
 
         stock_name = KR_WATCHLIST.get(ticker, ticker)
 
@@ -197,7 +202,7 @@ def analyze():
         # (한국 주식은 옵션 데이터가 제공되지 않으므로 역사적 변동성만 사용)
         options_prob = None
 
-        # 종목+기간별 저장된 신호 가중치 조회 (머신러닝 결과 또는 20개 기본값)
+        # 종목+기간별 저장된 신호 가중치 조회 (머신러닝 결과 또는 기간별 기본값)
         ticker_weights = config.get_ticker_period_weights(ticker, period_label)
 
         # 5. 기술지표 점수 (독립 가중치 항상 적용)
@@ -220,7 +225,9 @@ def analyze():
         macd_alert = _check_macd_alert(latest, analyzed_df)
 
         # 8. 자연어 해석
-        interpretation = ConsultingInterpreter.interpret(latest, holding_days=holding_days)
+        interpretation = ConsultingInterpreter.interpret(
+            latest, holding_days=holding_days, target_return_pct=target_return_pct
+        )
 
         # 9. 차트 데이터
         chart_data = _build_chart_data(analyzed_df)
@@ -237,6 +244,7 @@ def analyze():
             'buy_sell_score': result['buy_sell_score'],
             'period_label': period_label,
             'holding_days': holding_days,
+            'target_return_pct': target_return_pct,
             'holding_period': result['holding_period'],
             'weights_used': result['weights_used'],
             'ticker_weights': ticker_weights,
@@ -296,8 +304,11 @@ def macd_alert_check(ticker):
 
 @app.route('/api/periods')
 def get_periods():
-    """사전 정의 홀딩 기간 목록 반환"""
-    periods = [{'label': k, 'days': v} for k, v in HOLDING_PERIODS.items()]
+    """고정 홀딩 기간(단기/장기)과 기간별 목표 수익률 반환"""
+    periods = [
+        {'label': k, 'name': PERIOD_NAMES[k], 'days': v, 'target_return_pct': TARGET_RETURNS[k]}
+        for k, v in HOLDING_PERIODS.items()
+    ]
     return jsonify({'success': True, 'periods': periods})
 
 
@@ -316,8 +327,10 @@ def update_ticker_weights(ticker):
     """종목+기간별 가중치 수동 업데이트"""
     ticker = ticker.strip().upper()
     data = request.get_json(force=True)
-    period_label = data.get('period_label', '4w')
+    period_label = data.get('period_label', DEFAULT_PERIOD)
     new_weights  = data.get('weights', {})
+    if period_label not in HOLDING_PERIODS:
+        return jsonify({'success': False, 'error': f"기간은 {list(HOLDING_PERIODS)} 중 하나여야 합니다"}), 400
     if not new_weights:
         return jsonify({'success': False, 'error': 'weights 필드가 없습니다'}), 400
     config.update_ticker_period_weights(ticker, period_label, new_weights)
@@ -350,6 +363,7 @@ if __name__ == '__main__':
     print("  📈 퀀트 트레이딩 분석 서버 시작")
     print("  접속 URL: http://localhost:5000")
     print("  GEMINI_API_KEY:", "✓ 설정됨" if GEMINI_API_KEY else "✗ 미설정 (뉴스 분석 비활성화)")
-    print(f"  사전정의 홀딩 기간: {len(HOLDING_PERIODS)}개")
+    for k, v in HOLDING_PERIODS.items():
+        print(f"  {PERIOD_NAMES[k]}: {v}거래일 / 목표 수익률 {TARGET_RETURNS[k]}%")
     print("=" * 55)
     app.run(host='0.0.0.0', port=5000, debug=True)
