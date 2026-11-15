@@ -176,6 +176,8 @@ function togglePopup(){
 const gc = v => v>=0.3?'var(--g)':v<=-0.3?'var(--r)':'var(--y)';
 const pc = p => p>=65?'var(--g)':p<=35?'var(--r)':'var(--y)';
 const bw = v => Math.round((v+1)/2*100);
+/* HTML 이스케이프 — 뉴스 제목·Gemini 응답 등 외부 텍스트는 반드시 거쳐서 innerHTML 에 넣음 */
+const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 async function runAnalysis(){
   const ticker = document.getElementById('wl-sel').value.trim().toUpperCase();
@@ -198,7 +200,7 @@ async function runAnalysis(){
     startMacd(ticker);
   } catch(e){
     document.getElementById('res-sect').style.display='block';
-    document.getElementById('res-body').innerHTML=`<div class="err">❌ ${e.message}</div>`;
+    document.getElementById('res-body').innerHTML=`<div class="err">❌ ${esc(e.message)}</div>`;
   } finally {
     btn.disabled=false; document.getElementById('spin').style.display='none'; document.getElementById('btn-txt').textContent='▶ 분석 시작';
   }
@@ -237,9 +239,15 @@ function renderChart(cd, ticker, name){
 }
 
 function renderResult(d){
-  const fp=d.feasibility_pct, bs=d.buy_sell_score;
-  const brkd=d.breakdown||{}, vol=d.volatility||{}, news=d.news||{}, interp=d.interpretation||{};
-  const bsLbl=bs>=0.2?`<span style="color:var(--g);font-weight:700">매수 ▲</span>`:bs<=-0.2?`<span style="color:var(--r);font-weight:700">매도 ▼</span>`:`<span style="color:var(--y);font-weight:700">중립 ─</span>`;
+  const fp=d.feasibility_pct;
+  const cp=d.components||{}, vol=d.volatility||{}, news=d.news||{}, interp=d.interpretation||{};
+  const rec=d.recommendation||{score:0,grade:'-',reasons:[]}, nc=d.news_category||{};
+  const sub='font-size:.62rem;color:#8b949e';
+  const gradeColor={'매수':'var(--g)','관심':'#84cc16','관망':'var(--y)','회피':'var(--r)'}[rec.grade]||'#8b949e';
+  const ncColor={positive:'var(--g)',neutral:'#8b949e',risk:'var(--r)'}[nc.key]||'#8b949e';
+  const edge=cp.edge_pct??0, edgeColor=edge>0?'var(--g)':edge<0?'var(--r)':'#8b949e';
+  const card=(title,val,color,extra)=>`<div class="mini-card"><div class="mk">${title}</div>
+    <div class="mv" style="color:${color}">${val}</div>${extra||''}</div>`;
 
   let h=`
   <div class="big-num">
@@ -247,33 +255,35 @@ function renderResult(d){
     <div class="lbl">실현가능성 · ${d.holding_period||selPeriod}</div>
   </div>
   <div class="gauge"><div class="gauge-f" style="width:${fp}%;background:${pc(fp)}"></div></div>
-  <div style="text-align:center;margin:6px 0;font-size:.85rem">${bsLbl} <span style="color:${gc(bs)};font-weight:700;font-size:1rem">${bs>=0?'+':''}${bs.toFixed(3)}</span></div>
+  <div style="text-align:center;margin:8px 0 4px;font-size:.85rem">추천 <span style="color:${gradeColor};font-weight:700;font-size:1.15rem">${rec.score}점 · ${rec.grade}</span></div>
+  <div class="gauge"><div class="gauge-f" style="width:${rec.score}%;background:${gradeColor}"></div></div>
 
-  <div class="row4">
-    <div class="mini-card"><div class="mk">📰 뉴스</div><div class="mv" style="color:${gc(brkd.news||0)}">${(brkd.news||0)>=0?'+':''}${(brkd.news||0).toFixed(2)}</div></div>
-    <div class="mini-card"><div class="mk">📈 기술 (추세)</div><div class="mv" style="color:${gc(brkd.technical||0)}">${(brkd.technical||0)>=0?'+':''}${(brkd.technical||0).toFixed(2)}</div></div>
-    <div class="mini-card"><div class="mk">📉 지표 (오실레이터)</div><div class="mv" style="color:${gc(brkd.indicator||0)}">${(brkd.indicator||0)>=0?'+':''}${(brkd.indicator||0).toFixed(2)}</div></div>
-    ${brkd.options!=null
-      ? `<div class="mini-card"><div class="mk">🎲 옵션</div><div class="mv" style="color:${gc(brkd.options)}">${brkd.options>=0?'+':''}${brkd.options.toFixed(2)}</div></div>`
-      : `<div class="mini-card"><div class="mk">🎲 통계 확률 (HV)</div><div class="mv" style="color:${pc(vol.hist_probability||0)}">${vol.hist_probability||0}%</div></div>`}
+  <div class="row4" style="grid-template-columns:1fr 1fr 1fr">
+    ${card('🎲 기준 확률', `${cp.hv0_pct}%`, pc(cp.hv0_pct||0), `<div style="${sub}">변동성 기반 · 방향 가정 없음</div>`)}
+    ${card('📊 모델 조정', `${edge>0?'+':''}${edge}%p`, edgeColor, cp.model_prob_pct!=null?`<div style="${sub}">모델 ${cp.model_prob_pct}% (평균 ${cp.model_base_rate_pct}%)</div>`:`<div style="${sub}">모델 없음</div>`)}
+    ${card('📰 뉴스', `${esc(nc.icon||'')} ${esc(nc.label||'일반')}`, ncColor, `<div style="${sub}">${nc.analyzed?`점수 ${(nc.score>=0?'+':'')+(nc.score||0).toFixed(2)}`:'분석 불가'}</div>`)}
   </div>
-  <div style="text-align:center;font-size:.68rem;color:#8b949e">실현가능성 = 모델 ${d.model_probability}% × 50% + 통계 ${vol.hist_probability||0}% × 50%</div>
+  <div style="text-align:center;font-size:.68rem;color:#8b949e">실현가능성 = 기준 ${cp.hv0_pct}% → 모델 조정 ${cp.adjusted_pct}%${nc.multiplier&&nc.multiplier!==1?` → 뉴스 ${esc(nc.label)} ×${nc.multiplier.toFixed(2)}`:''} · 점수는 같은 변동성 대비 우위로 계산</div>
+
+  <hr class="divider">
+  <div style="font-size:.7rem;color:#8b949e;margin-bottom:4px">🧾 추천 이유</div>
+  ${(rec.reasons||[]).map(r=>`<div style="font-size:.7rem;color:#c9d1d9;line-height:1.5;padding:2px 0">· ${esc(r)}</div>`).join('')}
 
   <hr class="divider">
   <div class="prow"><span>현재가</span><span class="pv">${(d.current_price||0).toLocaleString()}</span></div>
   <div class="prow"><span>목표가</span><span class="pv g">+${interp.expected_return_pct?.toFixed(2)||0}% → ${(interp.target_price||0).toLocaleString()}</span></div>
   <div class="prow"><span>손절가</span><span class="pv r">-${interp.risk_pct?.toFixed(2)||0}% → ${(interp.stop_loss||0).toLocaleString()}</span></div>
-  <div class="prow"><span>역사적 변동성</span><span class="pv">${vol.hist_vol_pct||0}%/yr</span></div>`;
+  <div class="prow"><span>역사적 변동성</span><span class="pv">${vol.hist_vol_pct!=null?vol.hist_vol_pct+'%/yr':'-'}</span></div>`;
 
   if(news.count>0){
-    h+=`<hr class="divider"><div style="font-size:.7rem;color:#8b949e;margin-bottom:4px">📰 뉴스 감성: <b style="color:${gc(news.score||0)}">${news.sentiment||'중립'}</b> · ${news.count}건</div>`;
-    if(news.reason) h+=`<div style="font-size:.68rem;color:#6e7681;font-style:italic;margin-bottom:4px">"${news.reason}"</div>`;
-    (news.key_topics||[]).forEach(t=>{ h+=`<span class="kw-tag">${t}</span>`; });
-    if((news.headlines||[]).length){ h+='<div style="margin-top:6px">'; (news.headlines||[]).forEach(hl=>{ h+=`<div class="news-head">· ${hl}</div>`; }); h+='</div>'; }
+    h+=`<hr class="divider"><div style="font-size:.7rem;color:#8b949e;margin-bottom:4px">📰 뉴스 감성: <b style="color:${gc(news.score||0)}">${esc(news.sentiment||'중립')}</b> · ${news.count}건</div>`;
+    if(news.reason) h+=`<div style="font-size:.68rem;color:#6e7681;font-style:italic;margin-bottom:4px">"${esc(news.reason)}"</div>`;
+    (news.key_topics||[]).forEach(t=>{ h+=`<span class="kw-tag">${esc(t)}</span>`; });
+    if((news.headlines||[]).length){ h+='<div style="margin-top:6px">'; (news.headlines||[]).forEach(hl=>{ h+=`<div class="news-head">· ${esc(hl)}</div>`; }); h+='</div>'; }
   }
 
   if(interp.text){
-    h+=`<hr class="divider"><div style="font-size:.7rem;color:#8b949e;margin-bottom:4px">💡 보조지표 해석</div><div class="interp">${interp.text}</div>`;
+    h+=`<hr class="divider"><div style="font-size:.7rem;color:#8b949e;margin-bottom:4px">💡 보조지표 해석</div><div class="interp">${esc(interp.text)}</div>`;
   }
 
   document.getElementById('res-body').innerHTML=h;
@@ -288,7 +298,7 @@ function updateMacdBadge(alert){
 
 function startMacd(ticker){
   if(macdTimer) clearInterval(macdTimer);
-  const poll=()=>fetch(`/api/macd-alert/${ticker}`).then(r=>r.json()).then(d=>{ if(d.success) updateMacdBadge(d.macd_alert); }).catch(()=>{});
+  const poll=()=>fetch(`/api/macd-alert/${encodeURIComponent(ticker)}`).then(r=>r.json()).then(d=>{ if(d.success) updateMacdBadge(d.macd_alert); }).catch(()=>{});
   poll();
   macdTimer=setInterval(poll,5*60*1000);
 }

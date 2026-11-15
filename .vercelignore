@@ -1,0 +1,9 @@
+# 서버 실행에 불필요한 학습 산출물·데이터 (배포 용량 절감)
+.venv/
+data/
+models_archive/
+models/oof_*.parquet
+models/tuning/
+models/xgb_params.prev.json
+reports/
+__pycache__/

@@ -1,0 +1,1678 @@
+{
+  "tag": "wf_wide_tuned",
+  "snapshot": "v2-wide",
+  "validation": "walk_forward_oof",
+  "eval_tickers": [
+    "373220.KS",
+    "034020.KS",
+    "068270.KS",
+    "138040.KS",
+    "003230.KS"
+  ],
+  "news": "excluded (neutral)",
+  "note": "총 성능은 OOF 로 적합한 보정식을 같은 OOF 로 평가 → 약간 낙관적. fold별 보조지표 AUC 를 1차 기준으로.",
+  "results": {
+    "short": {
+      "label_mode": "relative",
+      "feature_set": "extended",
+      "n_features": 36,
+      "calibration": {
+        "xgb": {
+          "a": -0.2025,
+          "b": 0.8416,
+          "c": 0.5007
+        },
+        "logreg": {
+          "a": -0.2425,
+          "b": 0.7761,
+          "c": 0.1117
+        }
+      },
+      "logreg_C_per_fold": [
+        0.001,
+        0.001,
+        10.0,
+        0.001,
+        0.001
+      ],
+      "full_oof": {
+        "n": 422214,
+        "tickers": 344,
+        "date_from": "2021-05-06",
+        "date_to": "2026-10-16",
+        "label_positive_pct": 30.2,
+        "target_positive_pct": 32.3,
+        "hv0_only": {
+          "auc": 0.5484,
+          "within_date_auc": 0.5528,
+          "within_ticker_auc": 0.4741,
+          "brier": 0.2177,
+          "brier_skill": 0.0039,
+          "mean_pred_pct": 34.4,
+          "actual_rate_pct": 32.3
+        },
+        "models": {
+          "xgb": {
+            "indicator": {
+              "auc": 0.5288,
+              "within_date_auc": 0.5316,
+              "within_ticker_auc": 0.5297,
+              "brier": 0.2105,
+              "brier_skill": 0.0008,
+              "mean_pred_pct": 30.4,
+              "actual_rate_pct": 30.2,
+              "fold_auc": {
+                "per_fold": [
+                  0.5236,
+                  0.5334,
+                  0.5368,
+                  0.5511,
+                  0.5178
+                ],
+                "mean": 0.5326,
+                "std": 0.0115
+              },
+              "prob_p10_p90": [
+                0.2628,
+                0.3528
+              ],
+              "spearman_vs_fwd_return": 0.0535
+            },
+            "total": {
+              "auc": 0.5548,
+              "within_date_auc": 0.5534,
+              "within_ticker_auc": 0.5092,
+              "brier": 0.217,
+              "brier_skill": 0.0075,
+              "mean_pred_pct": 32.5,
+              "actual_rate_pct": 32.3,
+              "score_spearman_vs_fwd_return": 0.0533,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 2713,
+                  "share_pct": 0.6,
+                  "hit_rate_pct": 48.9,
+                  "mean_fwd_return_pct": 8.78
+                },
+                {
+                  "grade": "관망",
+                  "n": 419133,
+                  "share_pct": 99.3,
+                  "hit_rate_pct": 32.2,
+                  "mean_fwd_return_pct": 1.88
+                },
+                {
+                  "grade": "회피",
+                  "n": 368,
+                  "share_pct": 0.1,
+                  "hit_rate_pct": 27.2,
+                  "mean_fwd_return_pct": -5.93
+                }
+              ],
+              "buy_interest_n": 2713,
+              "buy_interest_hit_pct": 48.9,
+              "buy_interest_ret_pct": 8.78,
+              "others_ret_pct": 1.87
+            }
+          },
+          "logreg": {
+            "indicator": {
+              "auc": 0.5205,
+              "within_date_auc": 0.5228,
+              "within_ticker_auc": 0.5181,
+              "brier": 0.2106,
+              "brier_skill": 0.0003,
+              "mean_pred_pct": 30.6,
+              "actual_rate_pct": 30.2,
+              "fold_auc": {
+                "per_fold": [
+                  0.5077,
+                  0.5094,
+                  0.5359,
+                  0.5576,
+                  0.5012
+                ],
+                "mean": 0.5224,
+                "std": 0.0212
+              },
+              "prob_p10_p90": [
+                0.28,
+                0.3347
+              ],
+              "spearman_vs_fwd_return": 0.0177
+            },
+            "total": {
+              "auc": 0.5476,
+              "within_date_auc": 0.5514,
+              "within_ticker_auc": 0.4807,
+              "brier": 0.2175,
+              "brier_skill": 0.0052,
+              "mean_pred_pct": 32.5,
+              "actual_rate_pct": 32.3,
+              "score_spearman_vs_fwd_return": 0.0253,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 5,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": 100.0,
+                  "mean_fwd_return_pct": 38.57
+                },
+                {
+                  "grade": "관망",
+                  "n": 422209,
+                  "share_pct": 100.0,
+                  "hit_rate_pct": 32.3,
+                  "mean_fwd_return_pct": 1.92
+                },
+                {
+                  "grade": "회피",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                }
+              ],
+              "buy_interest_n": 5,
+              "buy_interest_hit_pct": 100.0,
+              "buy_interest_ret_pct": 38.57,
+              "others_ret_pct": 1.92
+            }
+          }
+        }
+      },
+      "serving_oof": {
+        "n": 32449,
+        "tickers": 25,
+        "date_from": "2021-05-06",
+        "date_to": "2026-10-16",
+        "label_positive_pct": 30.9,
+        "target_positive_pct": 30.4,
+        "hv0_only": {
+          "auc": 0.5513,
+          "within_date_auc": 0.5761,
+          "within_ticker_auc": 0.4516,
+          "brier": 0.2114,
+          "brier_skill": 0.0036,
+          "mean_pred_pct": 32.8,
+          "actual_rate_pct": 30.5
+        },
+        "models": {
+          "xgb": {
+            "indicator": {
+              "auc": 0.5114,
+              "within_date_auc": 0.5302,
+              "within_ticker_auc": 0.5028,
+              "brier": 0.2142,
+              "brier_skill": -0.0028,
+              "mean_pred_pct": 30.5,
+              "actual_rate_pct": 30.9,
+              "fold_auc": {
+                "per_fold": [
+                  0.5469,
+                  0.5477,
+                  0.5399,
+                  0.5249,
+                  0.4604
+                ],
+                "mean": 0.524,
+                "std": 0.0328
+              },
+              "prob_p10_p90": [
+                0.2675,
+                0.3521
+              ],
+              "spearman_vs_fwd_return": -0.0188
+            },
+            "total": {
+              "auc": 0.5475,
+              "within_date_auc": 0.569,
+              "within_ticker_auc": 0.4647,
+              "brier": 0.2111,
+              "brier_skill": 0.003,
+              "mean_pred_pct": 31.1,
+              "actual_rate_pct": 30.4,
+              "score_spearman_vs_fwd_return": -0.0193,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 129,
+                  "share_pct": 0.4,
+                  "hit_rate_pct": 43.4,
+                  "mean_fwd_return_pct": 8.28
+                },
+                {
+                  "grade": "관망",
+                  "n": 32320,
+                  "share_pct": 99.6,
+                  "hit_rate_pct": 30.4,
+                  "mean_fwd_return_pct": 1.57
+                },
+                {
+                  "grade": "회피",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                }
+              ],
+              "buy_interest_n": 129,
+              "buy_interest_hit_pct": 43.4,
+              "buy_interest_ret_pct": 8.28,
+              "others_ret_pct": 1.57
+            }
+          },
+          "logreg": {
+            "indicator": {
+              "auc": 0.5202,
+              "within_date_auc": 0.5287,
+              "within_ticker_auc": 0.5169,
+              "brier": 0.2134,
+              "brier_skill": 0.001,
+              "mean_pred_pct": 30.9,
+              "actual_rate_pct": 30.9,
+              "fold_auc": {
+                "per_fold": [
+                  0.5371,
+                  0.4729,
+                  0.5401,
+                  0.5795,
+                  0.5137
+                ],
+                "mean": 0.5287,
+                "std": 0.035
+              },
+              "prob_p10_p90": [
+                0.2837,
+                0.337
+              ],
+              "spearman_vs_fwd_return": -0.0135
+            },
+            "total": {
+              "auc": 0.5479,
+              "within_date_auc": 0.5722,
+              "within_ticker_auc": 0.4469,
+              "brier": 0.211,
+              "brier_skill": 0.0033,
+              "mean_pred_pct": 31.2,
+              "actual_rate_pct": 30.4,
+              "score_spearman_vs_fwd_return": 0.0015,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관망",
+                  "n": 32449,
+                  "share_pct": 100.0,
+                  "hit_rate_pct": 30.4,
+                  "mean_fwd_return_pct": 1.6
+                },
+                {
+                  "grade": "회피",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                }
+              ],
+              "buy_interest_n": 0,
+              "buy_interest_hit_pct": null,
+              "buy_interest_ret_pct": null,
+              "others_ret_pct": 1.6
+            }
+          }
+        }
+      },
+      "eval_set": {
+        "n": 6158,
+        "tickers": 5,
+        "date_from": "2021-05-06",
+        "date_to": "2026-10-16",
+        "label_positive_pct": 33.7,
+        "target_positive_pct": 34.2,
+        "hv0_only": {
+          "auc": 0.5445,
+          "within_date_auc": 0.5893,
+          "within_ticker_auc": 0.5305,
+          "brier": 0.2244,
+          "brier_skill": 0.0044,
+          "mean_pred_pct": 34.4,
+          "actual_rate_pct": 34.3
+        },
+        "models": {
+          "xgb": {
+            "indicator": {
+              "auc": 0.5337,
+              "within_date_auc": 0.5375,
+              "within_ticker_auc": 0.5143,
+              "brier": 0.2232,
+              "brier_skill": 0.0017,
+              "mean_pred_pct": 30.9,
+              "actual_rate_pct": 33.7,
+              "fold_auc": {
+                "per_fold": [
+                  0.5003,
+                  0.5042,
+                  0.6376,
+                  0.622,
+                  0.4156
+                ],
+                "mean": 0.5359,
+                "std": 0.0831
+              },
+              "prob_p10_p90": [
+                0.2697,
+                0.3612
+              ],
+              "spearman_vs_fwd_return": 0.0193
+            },
+            "total": {
+              "auc": 0.5479,
+              "within_date_auc": 0.5743,
+              "within_ticker_auc": 0.5299,
+              "brier": 0.2244,
+              "brier_skill": 0.0023,
+              "mean_pred_pct": 32.8,
+              "actual_rate_pct": 34.2,
+              "score_spearman_vs_fwd_return": 0.0324,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 28,
+                  "share_pct": 0.5,
+                  "hit_rate_pct": 60.7,
+                  "mean_fwd_return_pct": 23.31
+                },
+                {
+                  "grade": "관망",
+                  "n": 6130,
+                  "share_pct": 99.5,
+                  "hit_rate_pct": 34.0,
+                  "mean_fwd_return_pct": 2.61
+                },
+                {
+                  "grade": "회피",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                }
+              ],
+              "buy_interest_n": 28,
+              "buy_interest_hit_pct": 60.7,
+              "buy_interest_ret_pct": 23.31,
+              "others_ret_pct": 2.61
+            }
+          },
+          "logreg": {
+            "indicator": {
+              "auc": 0.5515,
+              "within_date_auc": 0.5449,
+              "within_ticker_auc": 0.542,
+              "brier": 0.223,
+              "brier_skill": 0.0025,
+              "mean_pred_pct": 31.2,
+              "actual_rate_pct": 33.7,
+              "fold_auc": {
+                "per_fold": [
+                  0.5502,
+                  0.4267,
+                  0.64,
+                  0.6194,
+                  0.5456
+                ],
+                "mean": 0.5564,
+                "std": 0.0748
+              },
+              "prob_p10_p90": [
+                0.284,
+                0.344
+              ],
+              "spearman_vs_fwd_return": 0.0267
+            },
+            "total": {
+              "auc": 0.544,
+              "within_date_auc": 0.5826,
+              "within_ticker_auc": 0.5267,
+              "brier": 0.2252,
+              "brier_skill": -0.0012,
+              "mean_pred_pct": 32.6,
+              "actual_rate_pct": 34.2,
+              "score_spearman_vs_fwd_return": 0.0406,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관망",
+                  "n": 6158,
+                  "share_pct": 100.0,
+                  "hit_rate_pct": 34.2,
+                  "mean_fwd_return_pct": 2.7
+                },
+                {
+                  "grade": "회피",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                }
+              ],
+              "buy_interest_n": 0,
+              "buy_interest_hit_pct": null,
+              "buy_interest_ret_pct": null,
+              "others_ret_pct": 2.7
+            }
+          }
+        }
+      },
+      "tuning": {
+        "study": "v2-wide_short",
+        "snapshot": "v2-wide",
+        "tune_folds": [
+          1,
+          2,
+          3
+        ],
+        "holdout_folds": [
+          4,
+          5
+        ],
+        "best_value": 0.5294,
+        "baseline_value": 0.5192,
+        "n_trials": 80,
+        "n_pruned": 63,
+        "finished_at": "2026-11-15T17:32:05"
+      },
+      "holdout_full": {
+        "n": 188619,
+        "tickers": 344,
+        "date_from": "2024-06-20",
+        "date_to": "2026-10-16",
+        "label_positive_pct": 30.2,
+        "target_positive_pct": 35.9,
+        "hv0_only": {
+          "auc": 0.539,
+          "within_date_auc": 0.5456,
+          "within_ticker_auc": 0.4661,
+          "brier": 0.229,
+          "brier_skill": 0.0039,
+          "mean_pred_pct": 35.3,
+          "actual_rate_pct": 35.8
+        },
+        "models": {
+          "xgb": {
+            "indicator": {
+              "auc": 0.5298,
+              "within_date_auc": 0.5336,
+              "within_ticker_auc": 0.5278,
+              "brier": 0.2108,
+              "brier_skill": -0.0007,
+              "mean_pred_pct": 30.6,
+              "actual_rate_pct": 30.2,
+              "fold_auc": {
+                "per_fold": [
+                  0.5511,
+                  0.5178
+                ],
+                "mean": 0.5345,
+                "std": 0.0166
+              },
+              "prob_p10_p90": [
+                0.2466,
+                0.3699
+              ],
+              "spearman_vs_fwd_return": 0.0746
+            },
+            "total": {
+              "auc": 0.5509,
+              "within_date_auc": 0.5437,
+              "within_ticker_auc": 0.5176,
+              "brier": 0.229,
+              "brier_skill": 0.0048,
+              "mean_pred_pct": 33.2,
+              "actual_rate_pct": 35.9,
+              "score_spearman_vs_fwd_return": 0.0725,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 2166,
+                  "share_pct": 1.1,
+                  "hit_rate_pct": 51.0,
+                  "mean_fwd_return_pct": 9.13
+                },
+                {
+                  "grade": "관망",
+                  "n": 186131,
+                  "share_pct": 98.7,
+                  "hit_rate_pct": 35.7,
+                  "mean_fwd_return_pct": 2.81
+                },
+                {
+                  "grade": "회피",
+                  "n": 322,
+                  "share_pct": 0.2,
+                  "hit_rate_pct": 24.5,
+                  "mean_fwd_return_pct": -7.22
+                }
+              ],
+              "buy_interest_n": 2166,
+              "buy_interest_hit_pct": 51.0,
+              "buy_interest_ret_pct": 9.13,
+              "others_ret_pct": 2.79
+            }
+          },
+          "logreg": {
+            "indicator": {
+              "auc": 0.5225,
+              "within_date_auc": 0.5279,
+              "within_ticker_auc": 0.522,
+              "brier": 0.2107,
+              "brier_skill": -0.0003,
+              "mean_pred_pct": 30.8,
+              "actual_rate_pct": 30.2,
+              "fold_auc": {
+                "per_fold": [
+                  0.5576,
+                  0.5012
+                ],
+                "mean": 0.5294,
+                "std": 0.0282
+              },
+              "prob_p10_p90": [
+                0.2766,
+                0.3425
+              ],
+              "spearman_vs_fwd_return": 0.0281
+            },
+            "total": {
+              "auc": 0.5394,
+              "within_date_auc": 0.5452,
+              "within_ticker_auc": 0.4814,
+              "brier": 0.2298,
+              "brier_skill": 0.0011,
+              "mean_pred_pct": 33.1,
+              "actual_rate_pct": 35.9,
+              "score_spearman_vs_fwd_return": 0.0411,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 5,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": 100.0,
+                  "mean_fwd_return_pct": 38.57
+                },
+                {
+                  "grade": "관망",
+                  "n": 188614,
+                  "share_pct": 100.0,
+                  "hit_rate_pct": 35.9,
+                  "mean_fwd_return_pct": 2.87
+                },
+                {
+                  "grade": "회피",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                }
+              ],
+              "buy_interest_n": 5,
+              "buy_interest_hit_pct": 100.0,
+              "buy_interest_ret_pct": 38.57,
+              "others_ret_pct": 2.87
+            }
+          }
+        }
+      },
+      "holdout_serving": {
+        "n": 14075,
+        "tickers": 25,
+        "date_from": "2024-06-20",
+        "date_to": "2026-10-16",
+        "label_positive_pct": 29.7,
+        "target_positive_pct": 32.3,
+        "hv0_only": {
+          "auc": 0.531,
+          "within_date_auc": 0.5522,
+          "within_ticker_auc": 0.4634,
+          "brier": 0.2179,
+          "brier_skill": 0.0034,
+          "mean_pred_pct": 33.6,
+          "actual_rate_pct": 32.3
+        },
+        "models": {
+          "xgb": {
+            "indicator": {
+              "auc": 0.4853,
+              "within_date_auc": 0.5041,
+              "within_ticker_auc": 0.4784,
+              "brier": 0.2113,
+              "brier_skill": -0.0122,
+              "mean_pred_pct": 30.8,
+              "actual_rate_pct": 29.7,
+              "fold_auc": {
+                "per_fold": [
+                  0.5249,
+                  0.4604
+                ],
+                "mean": 0.4926,
+                "std": 0.0322
+              },
+              "prob_p10_p90": [
+                0.2599,
+                0.3648
+              ],
+              "spearman_vs_fwd_return": -0.0455
+            },
+            "total": {
+              "auc": 0.5264,
+              "within_date_auc": 0.5364,
+              "within_ticker_auc": 0.4683,
+              "brier": 0.2183,
+              "brier_skill": 0.0019,
+              "mean_pred_pct": 31.8,
+              "actual_rate_pct": 32.3,
+              "score_spearman_vs_fwd_return": -0.0449,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 86,
+                  "share_pct": 0.6,
+                  "hit_rate_pct": 38.4,
+                  "mean_fwd_return_pct": 4.84
+                },
+                {
+                  "grade": "관망",
+                  "n": 13989,
+                  "share_pct": 99.4,
+                  "hit_rate_pct": 32.3,
+                  "mean_fwd_return_pct": 1.65
+                },
+                {
+                  "grade": "회피",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                }
+              ],
+              "buy_interest_n": 86,
+              "buy_interest_hit_pct": 38.4,
+              "buy_interest_ret_pct": 4.84,
+              "others_ret_pct": 1.65
+            }
+          },
+          "logreg": {
+            "indicator": {
+              "auc": 0.5242,
+              "within_date_auc": 0.5313,
+              "within_ticker_auc": 0.5215,
+              "brier": 0.2086,
+              "brier_skill": 0.0006,
+              "mean_pred_pct": 31.2,
+              "actual_rate_pct": 29.7,
+              "fold_auc": {
+                "per_fold": [
+                  0.5795,
+                  0.5137
+                ],
+                "mean": 0.5466,
+                "std": 0.0329
+              },
+              "prob_p10_p90": [
+                0.2817,
+                0.3458
+              ],
+              "spearman_vs_fwd_return": -0.0203
+            },
+            "total": {
+              "auc": 0.5302,
+              "within_date_auc": 0.5517,
+              "within_ticker_auc": 0.4658,
+              "brier": 0.2176,
+              "brier_skill": 0.0049,
+              "mean_pred_pct": 31.7,
+              "actual_rate_pct": 32.3,
+              "score_spearman_vs_fwd_return": 0.0314,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관망",
+                  "n": 14075,
+                  "share_pct": 100.0,
+                  "hit_rate_pct": 32.3,
+                  "mean_fwd_return_pct": 1.67
+                },
+                {
+                  "grade": "회피",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                }
+              ],
+              "buy_interest_n": 0,
+              "buy_interest_hit_pct": null,
+              "buy_interest_ret_pct": null,
+              "others_ret_pct": 1.67
+            }
+          }
+        }
+      }
+    },
+    "long": {
+      "label_mode": "relative",
+      "feature_set": "extended",
+      "n_features": 36,
+      "calibration": {
+        "xgb": {
+          "a": -0.0604,
+          "b": 0.6598,
+          "c": 0.4201
+        },
+        "logreg": {
+          "a": -0.1984,
+          "b": 0.5186,
+          "c": 0.405
+        }
+      },
+      "logreg_C_per_fold": [
+        0.01,
+        0.001,
+        0.001,
+        0.001
+      ],
+      "full_oof": {
+        "n": 347712,
+        "tickers": 342,
+        "date_from": "2021-12-27",
+        "date_to": "2026-06-18",
+        "label_positive_pct": 30.2,
+        "target_positive_pct": 35.9,
+        "hv0_only": {
+          "auc": 0.541,
+          "within_date_auc": 0.5452,
+          "within_ticker_auc": 0.422,
+          "brier": 0.231,
+          "brier_skill": -0.0032,
+          "mean_pred_pct": 32.3,
+          "actual_rate_pct": 36.0
+        },
+        "models": {
+          "xgb": {
+            "indicator": {
+              "auc": 0.5257,
+              "within_date_auc": 0.5286,
+              "within_ticker_auc": 0.5313,
+              "brier": 0.2126,
+              "brier_skill": -0.0091,
+              "mean_pred_pct": 29.5,
+              "actual_rate_pct": 30.2,
+              "fold_auc": {
+                "per_fold": [
+                  0.531,
+                  0.5235,
+                  0.5289,
+                  0.5232
+                ],
+                "mean": 0.5266,
+                "std": 0.0034
+              },
+              "prob_p10_p90": [
+                0.216,
+                0.3685
+              ],
+              "spearman_vs_fwd_return": 0.1005
+            },
+            "total": {
+              "auc": 0.5588,
+              "within_date_auc": 0.5401,
+              "within_ticker_auc": 0.5134,
+              "brier": 0.2283,
+              "brier_skill": 0.0083,
+              "mean_pred_pct": 36.2,
+              "actual_rate_pct": 35.9,
+              "score_spearman_vs_fwd_return": 0.1008,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 5218,
+                  "share_pct": 1.5,
+                  "hit_rate_pct": 35.5,
+                  "mean_fwd_return_pct": 9.71
+                },
+                {
+                  "grade": "관망",
+                  "n": 335734,
+                  "share_pct": 96.6,
+                  "hit_rate_pct": 36.1,
+                  "mean_fwd_return_pct": 13.98
+                },
+                {
+                  "grade": "회피",
+                  "n": 6760,
+                  "share_pct": 1.9,
+                  "hit_rate_pct": 28.3,
+                  "mean_fwd_return_pct": 8.63
+                }
+              ],
+              "buy_interest_n": 5218,
+              "buy_interest_hit_pct": 35.5,
+              "buy_interest_ret_pct": 9.71,
+              "others_ret_pct": 13.87
+            }
+          },
+          "logreg": {
+            "indicator": {
+              "auc": 0.5224,
+              "within_date_auc": 0.5221,
+              "within_ticker_auc": 0.5397,
+              "brier": 0.2108,
+              "brier_skill": -0.0006,
+              "mean_pred_pct": 30.8,
+              "actual_rate_pct": 30.2,
+              "fold_auc": {
+                "per_fold": [
+                  0.5236,
+                  0.5118,
+                  0.5151,
+                  0.5319
+                ],
+                "mean": 0.5206,
+                "std": 0.0078
+              },
+              "prob_p10_p90": [
+                0.2655,
+                0.3526
+              ],
+              "spearman_vs_fwd_return": 0.0519
+            },
+            "total": {
+              "auc": 0.5474,
+              "within_date_auc": 0.5449,
+              "within_ticker_auc": 0.4905,
+              "brier": 0.2291,
+              "brier_skill": 0.0046,
+              "mean_pred_pct": 36.2,
+              "actual_rate_pct": 35.9,
+              "score_spearman_vs_fwd_return": 0.0471,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 1220,
+                  "share_pct": 0.4,
+                  "hit_rate_pct": 12.5,
+                  "mean_fwd_return_pct": -17.96
+                },
+                {
+                  "grade": "관망",
+                  "n": 345586,
+                  "share_pct": 99.4,
+                  "hit_rate_pct": 36.0,
+                  "mean_fwd_return_pct": 13.99
+                },
+                {
+                  "grade": "회피",
+                  "n": 906,
+                  "share_pct": 0.3,
+                  "hit_rate_pct": 17.1,
+                  "mean_fwd_return_pct": -10.98
+                }
+              ],
+              "buy_interest_n": 1220,
+              "buy_interest_hit_pct": 12.5,
+              "buy_interest_ret_pct": -17.96,
+              "others_ret_pct": 13.92
+            }
+          }
+        }
+      },
+      "serving_oof": {
+        "n": 26659,
+        "tickers": 25,
+        "date_from": "2021-12-27",
+        "date_to": "2026-06-18",
+        "label_positive_pct": 30.9,
+        "target_positive_pct": 34.1,
+        "hv0_only": {
+          "auc": 0.5627,
+          "within_date_auc": 0.5871,
+          "within_ticker_auc": 0.426,
+          "brier": 0.2242,
+          "brier_skill": 0.0043,
+          "mean_pred_pct": 30.5,
+          "actual_rate_pct": 34.2
+        },
+        "models": {
+          "xgb": {
+            "indicator": {
+              "auc": 0.5441,
+              "within_date_auc": 0.5737,
+              "within_ticker_auc": 0.5306,
+              "brier": 0.2125,
+              "brier_skill": 0.0042,
+              "mean_pred_pct": 29.2,
+              "actual_rate_pct": 30.9,
+              "fold_auc": {
+                "per_fold": [
+                  0.5781,
+                  0.5356,
+                  0.5199,
+                  0.5643
+                ],
+                "mean": 0.5495,
+                "std": 0.0229
+              },
+              "prob_p10_p90": [
+                0.222,
+                0.3606
+              ],
+              "spearman_vs_fwd_return": 0.0808
+            },
+            "total": {
+              "auc": 0.5704,
+              "within_date_auc": 0.5788,
+              "within_ticker_auc": 0.4979,
+              "brier": 0.2217,
+              "brier_skill": 0.0136,
+              "mean_pred_pct": 34.7,
+              "actual_rate_pct": 34.1,
+              "score_spearman_vs_fwd_return": 0.083,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 284,
+                  "share_pct": 1.1,
+                  "hit_rate_pct": 39.1,
+                  "mean_fwd_return_pct": 6.25
+                },
+                {
+                  "grade": "관망",
+                  "n": 26256,
+                  "share_pct": 98.5,
+                  "hit_rate_pct": 34.1,
+                  "mean_fwd_return_pct": 11.25
+                },
+                {
+                  "grade": "회피",
+                  "n": 119,
+                  "share_pct": 0.4,
+                  "hit_rate_pct": 11.8,
+                  "mean_fwd_return_pct": -26.42
+                }
+              ],
+              "buy_interest_n": 284,
+              "buy_interest_hit_pct": 39.1,
+              "buy_interest_ret_pct": 6.25,
+              "others_ret_pct": 11.08
+            }
+          },
+          "logreg": {
+            "indicator": {
+              "auc": 0.4707,
+              "within_date_auc": 0.5264,
+              "within_ticker_auc": 0.4893,
+              "brier": 0.2157,
+              "brier_skill": -0.0108,
+              "mean_pred_pct": 30.4,
+              "actual_rate_pct": 30.9,
+              "fold_auc": {
+                "per_fold": [
+                  0.5295,
+                  0.4266,
+                  0.4638,
+                  0.5613
+                ],
+                "mean": 0.4953,
+                "std": 0.053
+              },
+              "prob_p10_p90": [
+                0.2617,
+                0.3461
+              ],
+              "spearman_vs_fwd_return": -0.0465
+            },
+            "total": {
+              "auc": 0.5423,
+              "within_date_auc": 0.5742,
+              "within_ticker_auc": 0.462,
+              "brier": 0.2241,
+              "brier_skill": 0.0029,
+              "mean_pred_pct": 34.9,
+              "actual_rate_pct": 34.1,
+              "score_spearman_vs_fwd_return": -0.05,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 25,
+                  "share_pct": 0.1,
+                  "hit_rate_pct": 12.0,
+                  "mean_fwd_return_pct": -14.64
+                },
+                {
+                  "grade": "관망",
+                  "n": 26634,
+                  "share_pct": 99.9,
+                  "hit_rate_pct": 34.1,
+                  "mean_fwd_return_pct": 11.05
+                },
+                {
+                  "grade": "회피",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                }
+              ],
+              "buy_interest_n": 25,
+              "buy_interest_hit_pct": 12.0,
+              "buy_interest_ret_pct": -14.64,
+              "others_ret_pct": 11.05
+            }
+          }
+        }
+      },
+      "eval_set": {
+        "n": 5118,
+        "tickers": 5,
+        "date_from": "2021-12-27",
+        "date_to": "2026-06-18",
+        "label_positive_pct": 35.7,
+        "target_positive_pct": 37.5,
+        "hv0_only": {
+          "auc": 0.568,
+          "within_date_auc": 0.6154,
+          "within_ticker_auc": 0.523,
+          "brier": 0.2375,
+          "brier_skill": -0.0056,
+          "mean_pred_pct": 32.5,
+          "actual_rate_pct": 38.3
+        },
+        "models": {
+          "xgb": {
+            "indicator": {
+              "auc": 0.5958,
+              "within_date_auc": 0.6427,
+              "within_ticker_auc": 0.5627,
+              "brier": 0.2279,
+              "brier_skill": 0.0072,
+              "mean_pred_pct": 29.7,
+              "actual_rate_pct": 35.7,
+              "fold_auc": {
+                "per_fold": [
+                  0.6105,
+                  0.603,
+                  0.6194,
+                  0.5329
+                ],
+                "mean": 0.5914,
+                "std": 0.0343
+              },
+              "prob_p10_p90": [
+                0.2329,
+                0.3646
+              ],
+              "spearman_vs_fwd_return": 0.1159
+            },
+            "total": {
+              "auc": 0.5584,
+              "within_date_auc": 0.5844,
+              "within_ticker_auc": 0.522,
+              "brier": 0.2348,
+              "brier_skill": -0.0022,
+              "mean_pred_pct": 36.6,
+              "actual_rate_pct": 37.5,
+              "score_spearman_vs_fwd_return": 0.1197,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 71,
+                  "share_pct": 1.4,
+                  "hit_rate_pct": 36.6,
+                  "mean_fwd_return_pct": 9.03
+                },
+                {
+                  "grade": "관망",
+                  "n": 5017,
+                  "share_pct": 98.0,
+                  "hit_rate_pct": 37.5,
+                  "mean_fwd_return_pct": 15.36
+                },
+                {
+                  "grade": "회피",
+                  "n": 30,
+                  "share_pct": 0.6,
+                  "hit_rate_pct": 43.3,
+                  "mean_fwd_return_pct": 6.71
+                }
+              ],
+              "buy_interest_n": 71,
+              "buy_interest_hit_pct": 36.6,
+              "buy_interest_ret_pct": 9.03,
+              "others_ret_pct": 15.3
+            }
+          },
+          "logreg": {
+            "indicator": {
+              "auc": 0.4788,
+              "within_date_auc": 0.5042,
+              "within_ticker_auc": 0.4934,
+              "brier": 0.2333,
+              "brier_skill": -0.0165,
+              "mean_pred_pct": 30.6,
+              "actual_rate_pct": 35.7,
+              "fold_auc": {
+                "per_fold": [
+                  0.4463,
+                  0.3753,
+                  0.4737,
+                  0.6875
+                ],
+                "mean": 0.4957,
+                "std": 0.1164
+              },
+              "prob_p10_p90": [
+                0.2644,
+                0.3513
+              ],
+              "spearman_vs_fwd_return": -0.1004
+            },
+            "total": {
+              "auc": 0.4911,
+              "within_date_auc": 0.5699,
+              "within_ticker_auc": 0.4777,
+              "brier": 0.238,
+              "brier_skill": -0.0157,
+              "mean_pred_pct": 36.4,
+              "actual_rate_pct": 37.5,
+              "score_spearman_vs_fwd_return": -0.1051,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 4,
+                  "share_pct": 0.1,
+                  "hit_rate_pct": 0.0,
+                  "mean_fwd_return_pct": 7.63
+                },
+                {
+                  "grade": "관망",
+                  "n": 5114,
+                  "share_pct": 99.9,
+                  "hit_rate_pct": 37.5,
+                  "mean_fwd_return_pct": 15.22
+                },
+                {
+                  "grade": "회피",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                }
+              ],
+              "buy_interest_n": 4,
+              "buy_interest_hit_pct": 0.0,
+              "buy_interest_ret_pct": 7.63,
+              "others_ret_pct": 15.22
+            }
+          }
+        }
+      },
+      "tuning": {
+        "study": "v2-wide_long",
+        "snapshot": "v2-wide",
+        "tune_folds": [
+          1,
+          2
+        ],
+        "holdout_folds": [
+          3,
+          4
+        ],
+        "best_value": 0.5244,
+        "baseline_value": 0.5168,
+        "n_trials": 53,
+        "n_pruned": 23,
+        "finished_at": "2026-11-15T18:03:07"
+      },
+      "holdout_full": {
+        "n": 190821,
+        "tickers": 342,
+        "date_from": "2024-02-01",
+        "date_to": "2026-06-18",
+        "label_positive_pct": 30.2,
+        "target_positive_pct": 41.1,
+        "hv0_only": {
+          "auc": 0.5322,
+          "within_date_auc": 0.5369,
+          "within_ticker_auc": 0.4327,
+          "brier": 0.2486,
+          "brier_skill": -0.0269,
+          "mean_pred_pct": 32.9,
+          "actual_rate_pct": 41.1
+        },
+        "models": {
+          "xgb": {
+            "indicator": {
+              "auc": 0.5251,
+              "within_date_auc": 0.5284,
+              "within_ticker_auc": 0.5408,
+              "brier": 0.2133,
+              "brier_skill": -0.0126,
+              "mean_pred_pct": 28.8,
+              "actual_rate_pct": 30.2,
+              "fold_auc": {
+                "per_fold": [
+                  0.5289,
+                  0.5232
+                ],
+                "mean": 0.526,
+                "std": 0.0029
+              },
+              "prob_p10_p90": [
+                0.1944,
+                0.3604
+              ],
+              "spearman_vs_fwd_return": 0.1044
+            },
+            "total": {
+              "auc": 0.5582,
+              "within_date_auc": 0.5229,
+              "within_ticker_auc": 0.5455,
+              "brier": 0.2422,
+              "brier_skill": -0.0006,
+              "mean_pred_pct": 36.1,
+              "actual_rate_pct": 41.1,
+              "score_spearman_vs_fwd_return": 0.1048,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 2117,
+                  "share_pct": 1.1,
+                  "hit_rate_pct": 33.0,
+                  "mean_fwd_return_pct": 9.43
+                },
+                {
+                  "grade": "관망",
+                  "n": 182330,
+                  "share_pct": 95.6,
+                  "hit_rate_pct": 41.6,
+                  "mean_fwd_return_pct": 19.33
+                },
+                {
+                  "grade": "회피",
+                  "n": 6374,
+                  "share_pct": 3.3,
+                  "hit_rate_pct": 28.4,
+                  "mean_fwd_return_pct": 8.94
+                }
+              ],
+              "buy_interest_n": 2117,
+              "buy_interest_hit_pct": 33.0,
+              "buy_interest_ret_pct": 9.43,
+              "others_ret_pct": 18.98
+            }
+          },
+          "logreg": {
+            "indicator": {
+              "auc": 0.5249,
+              "within_date_auc": 0.525,
+              "within_ticker_auc": 0.556,
+              "brier": 0.2107,
+              "brier_skill": -0.0004,
+              "mean_pred_pct": 31.6,
+              "actual_rate_pct": 30.2,
+              "fold_auc": {
+                "per_fold": [
+                  0.5151,
+                  0.5319
+                ],
+                "mean": 0.5235,
+                "std": 0.0084
+              },
+              "prob_p10_p90": [
+                0.2726,
+                0.363
+              ],
+              "spearman_vs_fwd_return": -0.0261
+            },
+            "total": {
+              "auc": 0.5236,
+              "within_date_auc": 0.536,
+              "within_ticker_auc": 0.4916,
+              "brier": 0.2438,
+              "brier_skill": -0.0074,
+              "mean_pred_pct": 36.8,
+              "actual_rate_pct": 41.1,
+              "score_spearman_vs_fwd_return": -0.0275,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 1073,
+                  "share_pct": 0.6,
+                  "hit_rate_pct": 11.6,
+                  "mean_fwd_return_pct": -20.31
+                },
+                {
+                  "grade": "관망",
+                  "n": 189074,
+                  "share_pct": 99.1,
+                  "hit_rate_pct": 41.3,
+                  "mean_fwd_return_pct": 19.22
+                },
+                {
+                  "grade": "회피",
+                  "n": 674,
+                  "share_pct": 0.4,
+                  "hit_rate_pct": 14.8,
+                  "mean_fwd_return_pct": -13.82
+                }
+              ],
+              "buy_interest_n": 1073,
+              "buy_interest_hit_pct": 11.6,
+              "buy_interest_ret_pct": -20.31,
+              "others_ret_pct": 19.1
+            }
+          }
+        }
+      },
+      "holdout_serving": {
+        "n": 14375,
+        "tickers": 25,
+        "date_from": "2024-02-01",
+        "date_to": "2026-06-18",
+        "label_positive_pct": 28.9,
+        "target_positive_pct": 36.1,
+        "hv0_only": {
+          "auc": 0.5274,
+          "within_date_auc": 0.5472,
+          "within_ticker_auc": 0.4327,
+          "brier": 0.2327,
+          "brier_skill": -0.0085,
+          "mean_pred_pct": 31.2,
+          "actual_rate_pct": 36.1
+        },
+        "models": {
+          "xgb": {
+            "indicator": {
+              "auc": 0.5459,
+              "within_date_auc": 0.5595,
+              "within_ticker_auc": 0.5671,
+              "brier": 0.2048,
+              "brier_skill": 0.004,
+              "mean_pred_pct": 29.2,
+              "actual_rate_pct": 28.9,
+              "fold_auc": {
+                "per_fold": [
+                  0.5199,
+                  0.5643
+                ],
+                "mean": 0.5421,
+                "std": 0.0222
+              },
+              "prob_p10_p90": [
+                0.223,
+                0.36
+              ],
+              "spearman_vs_fwd_return": 0.0397
+            },
+            "total": {
+              "auc": 0.5312,
+              "within_date_auc": 0.5305,
+              "within_ticker_auc": 0.5045,
+              "brier": 0.2298,
+              "brier_skill": 0.0039,
+              "mean_pred_pct": 35.1,
+              "actual_rate_pct": 36.1,
+              "score_spearman_vs_fwd_return": 0.0427,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 145,
+                  "share_pct": 1.0,
+                  "hit_rate_pct": 35.2,
+                  "mean_fwd_return_pct": 1.8
+                },
+                {
+                  "grade": "관망",
+                  "n": 14126,
+                  "share_pct": 98.3,
+                  "hit_rate_pct": 36.3,
+                  "mean_fwd_return_pct": 12.59
+                },
+                {
+                  "grade": "회피",
+                  "n": 104,
+                  "share_pct": 0.7,
+                  "hit_rate_pct": 13.5,
+                  "mean_fwd_return_pct": -27.14
+                }
+              ],
+              "buy_interest_n": 145,
+              "buy_interest_hit_pct": 35.2,
+              "buy_interest_ret_pct": 1.8,
+              "others_ret_pct": 12.29
+            }
+          },
+          "logreg": {
+            "indicator": {
+              "auc": 0.4829,
+              "within_date_auc": 0.5411,
+              "within_ticker_auc": 0.5189,
+              "brier": 0.2082,
+              "brier_skill": -0.0123,
+              "mean_pred_pct": 31.5,
+              "actual_rate_pct": 28.9,
+              "fold_auc": {
+                "per_fold": [
+                  0.4638,
+                  0.5613
+                ],
+                "mean": 0.5125,
+                "std": 0.0488
+              },
+              "prob_p10_p90": [
+                0.275,
+                0.3603
+              ],
+              "spearman_vs_fwd_return": -0.1609
+            },
+            "total": {
+              "auc": 0.4874,
+              "within_date_auc": 0.536,
+              "within_ticker_auc": 0.4323,
+              "brier": 0.2322,
+              "brier_skill": -0.0065,
+              "mean_pred_pct": 35.7,
+              "actual_rate_pct": 36.1,
+              "score_spearman_vs_fwd_return": -0.1643,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 24,
+                  "share_pct": 0.2,
+                  "hit_rate_pct": 8.3,
+                  "mean_fwd_return_pct": -21.19
+                },
+                {
+                  "grade": "관망",
+                  "n": 14351,
+                  "share_pct": 99.8,
+                  "hit_rate_pct": 36.2,
+                  "mean_fwd_return_pct": 12.24
+                },
+                {
+                  "grade": "회피",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                }
+              ],
+              "buy_interest_n": 24,
+              "buy_interest_hit_pct": 8.3,
+              "buy_interest_ret_pct": -21.19,
+              "others_ret_pct": 12.24
+            }
+          }
+        }
+      }
+    }
+  }
+}

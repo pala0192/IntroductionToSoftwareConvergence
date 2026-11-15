@@ -1,0 +1,4233 @@
+{
+ "meta": {
+  "mode": "current",
+  "survivorship_biased": true,
+  "sources": {
+   "KOSPI200": "naver enrollStocks (현재 편입)",
+   "KOSDAQ150": "naver KOSDAQ 시가총액 상위 150 보통주 (KOSDAQ150 근사)"
+  },
+  "counts": {
+   "KOSPI200": 201,
+   "KOSDAQ150_approx": 150
+  },
+  "start": "2016-01-01",
+  "end": "2026-11-13",
+  "built_at": "2026-11-15T16:13:24",
+  "n_tickers": 351,
+  "serving_added_outside_index": 0
+ },
+ "tickers": {
+  "005930.KS": {
+   "name": "삼성전자",
+   "code": "005930",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "000660.KS": {
+   "name": "SK하이닉스",
+   "code": "000660",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "402340.KS": {
+   "name": "SK스퀘어",
+   "code": "402340",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "373220.KS": {
+   "name": "LG에너지솔루션",
+   "code": "373220",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "207940.KS": {
+   "name": "삼성바이오로직스",
+   "code": "207940",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "009150.KS": {
+   "name": "삼성전기",
+   "code": "009150",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "105560.KS": {
+   "name": "KB금융",
+   "code": "105560",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "005380.KS": {
+   "name": "현대차",
+   "code": "005380",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "032830.KS": {
+   "name": "삼성생명",
+   "code": "032830",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "068270.KS": {
+   "name": "셀트리온",
+   "code": "068270",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "028260.KS": {
+   "name": "삼성물산",
+   "code": "028260",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "055550.KS": {
+   "name": "신한지주",
+   "code": "055550",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "006400.KS": {
+   "name": "삼성SDI",
+   "code": "006400",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "000270.KS": {
+   "name": "기아",
+   "code": "000270",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "034730.KS": {
+   "name": "SK",
+   "code": "034730",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "086790.KS": {
+   "name": "하나금융지주",
+   "code": "086790",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "012450.KS": {
+   "name": "한화에어로스페이스",
+   "code": "012450",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "012330.KS": {
+   "name": "현대모비스",
+   "code": "012330",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "034020.KS": {
+   "name": "두산에너빌리티",
+   "code": "034020",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "329180.KS": {
+   "name": "HD현대중공업",
+   "code": "329180",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "035420.KS": {
+   "name": "NAVER",
+   "code": "035420",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "316140.KS": {
+   "name": "우리금융지주",
+   "code": "316140",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "000810.KS": {
+   "name": "삼성화재",
+   "code": "000810",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "066570.KS": {
+   "name": "LG전자",
+   "code": "066570",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "005490.KS": {
+   "name": "POSCO홀딩스",
+   "code": "005490",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "011200.KS": {
+   "name": "HMM",
+   "code": "011200",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "138040.KS": {
+   "name": "메리츠금융지주",
+   "code": "138040",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "010120.KS": {
+   "name": "LS ELECTRIC",
+   "code": "010120",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "096770.KS": {
+   "name": "SK이노베이션",
+   "code": "096770",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "033780.KS": {
+   "name": "KT&G",
+   "code": "033780",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "010130.KS": {
+   "name": "고려아연",
+   "code": "010130",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "018260.KS": {
+   "name": "삼성에스디에스",
+   "code": "018260",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "017670.KS": {
+   "name": "SK텔레콤",
+   "code": "017670",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "015760.KS": {
+   "name": "한국전력",
+   "code": "015760",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "042700.KS": {
+   "name": "한미반도체",
+   "code": "042700",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "298040.KS": {
+   "name": "효성중공업",
+   "code": "298040",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "009540.KS": {
+   "name": "HD한국조선해양",
+   "code": "009540",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "051910.KS": {
+   "name": "LG화학",
+   "code": "051910",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "003670.KS": {
+   "name": "포스코퓨처엠",
+   "code": "003670",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "267260.KS": {
+   "name": "HD현대일렉트릭",
+   "code": "267260",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "086280.KS": {
+   "name": "현대글로비스",
+   "code": "086280",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "024110.KS": {
+   "name": "기업은행",
+   "code": "024110",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "042660.KS": {
+   "name": "한화오션",
+   "code": "042660",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "010140.KS": {
+   "name": "삼성중공업",
+   "code": "010140",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "035720.KS": {
+   "name": "카카오",
+   "code": "035720",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "028050.KS": {
+   "name": "삼성E&A",
+   "code": "028050",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "180640.KS": {
+   "name": "한진칼",
+   "code": "180640",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "003550.KS": {
+   "name": "LG",
+   "code": "003550",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "030200.KS": {
+   "name": "KT",
+   "code": "030200",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "010950.KS": {
+   "name": "S-Oil",
+   "code": "010950",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "006800.KS": {
+   "name": "미래에셋증권",
+   "code": "006800",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "003490.KS": {
+   "name": "대한항공",
+   "code": "003490",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "005830.KS": {
+   "name": "DB손해보험",
+   "code": "005830",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "047810.KS": {
+   "name": "한국항공우주",
+   "code": "047810",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "272210.KS": {
+   "name": "한화시스템",
+   "code": "272210",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "267250.KS": {
+   "name": "HD현대",
+   "code": "267250",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "323410.KS": {
+   "name": "카카오뱅크",
+   "code": "323410",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "000720.KS": {
+   "name": "현대건설",
+   "code": "000720",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "003230.KS": {
+   "name": "삼양식품",
+   "code": "003230",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "259960.KS": {
+   "name": "크래프톤",
+   "code": "259960",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "000150.KS": {
+   "name": "두산",
+   "code": "000150",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "278470.KS": {
+   "name": "에이피알",
+   "code": "278470",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "047050.KS": {
+   "name": "포스코인터내셔널",
+   "code": "047050",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "0126Z0.KS": {
+   "name": "삼성에피스홀딩스",
+   "code": "0126Z0",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "005940.KS": {
+   "name": "NH투자증권",
+   "code": "005940",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "307950.KS": {
+   "name": "현대오토에버",
+   "code": "307950",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "079550.KS": {
+   "name": "LIG디펜스앤에어로스페이스",
+   "code": "079550",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "443060.KS": {
+   "name": "HD현대마린솔루션",
+   "code": "443060",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "078930.KS": {
+   "name": "GS",
+   "code": "078930",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "064350.KS": {
+   "name": "현대로템",
+   "code": "064350",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "161390.KS": {
+   "name": "한국타이어앤테크놀로지",
+   "code": "161390",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "064400.KS": {
+   "name": "LG씨엔에스",
+   "code": "064400",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "090430.KS": {
+   "name": "아모레퍼시픽",
+   "code": "090430",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "021240.KS": {
+   "name": "코웨이",
+   "code": "021240",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "071050.KS": {
+   "name": "한국금융지주",
+   "code": "071050",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "326030.KS": {
+   "name": "SK바이오팜",
+   "code": "326030",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "011070.KS": {
+   "name": "LG이노텍",
+   "code": "011070",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "352820.KS": {
+   "name": "하이브",
+   "code": "352820",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "007660.KS": {
+   "name": "이수페타시스",
+   "code": "007660",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "016360.KS": {
+   "name": "삼성증권",
+   "code": "016360",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "032640.KS": {
+   "name": "LG유플러스",
+   "code": "032640",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "128940.KS": {
+   "name": "한미약품",
+   "code": "128940",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "006260.KS": {
+   "name": "LS",
+   "code": "006260",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "000100.KS": {
+   "name": "유한양행",
+   "code": "000100",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "039490.KS": {
+   "name": "키움증권",
+   "code": "039490",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "009830.KS": {
+   "name": "한화솔루션",
+   "code": "009830",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "241560.KS": {
+   "name": "두산밥캣",
+   "code": "241560",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "175330.KS": {
+   "name": "JB금융지주",
+   "code": "175330",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "047040.KS": {
+   "name": "대우건설",
+   "code": "047040",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "029780.KS": {
+   "name": "삼성카드",
+   "code": "029780",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "271560.KS": {
+   "name": "오리온",
+   "code": "271560",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "267270.KS": {
+   "name": "HD건설기계",
+   "code": "267270",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "377300.KS": {
+   "name": "카카오페이",
+   "code": "377300",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "138930.KS": {
+   "name": "BNK금융지주",
+   "code": "138930",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "000880.KS": {
+   "name": "한화",
+   "code": "000880",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "062040.KS": {
+   "name": "산일전기",
+   "code": "062040",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "036570.KS": {
+   "name": "NC",
+   "code": "036570",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "004020.KS": {
+   "name": "현대제철",
+   "code": "004020",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "012750.KS": {
+   "name": "에스원",
+   "code": "012750",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "011790.KS": {
+   "name": "SKC",
+   "code": "011790",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "001440.KS": {
+   "name": "대한전선",
+   "code": "001440",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "010060.KS": {
+   "name": "OCI홀딩스",
+   "code": "010060",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "000990.KS": {
+   "name": "DB하이텍",
+   "code": "000990",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "034220.KS": {
+   "name": "LG디스플레이",
+   "code": "034220",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "008930.KS": {
+   "name": "한미사이언스",
+   "code": "008930",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "036460.KS": {
+   "name": "한국가스공사",
+   "code": "036460",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "454910.KS": {
+   "name": "두산로보틱스",
+   "code": "454910",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "051900.KS": {
+   "name": "LG생활건강",
+   "code": "051900",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "066970.KS": {
+   "name": "엘앤에프",
+   "code": "066970",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "022100.KS": {
+   "name": "포스코DX",
+   "code": "022100",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "001040.KS": {
+   "name": "CJ",
+   "code": "001040",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "002380.KS": {
+   "name": "KCC",
+   "code": "002380",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "088350.KS": {
+   "name": "한화생명",
+   "code": "088350",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "018880.KS": {
+   "name": "한온시스템",
+   "code": "018880",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "192820.KS": {
+   "name": "코스맥스",
+   "code": "192820",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "111770.KS": {
+   "name": "영원무역",
+   "code": "111770",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "302440.KS": {
+   "name": "SK바이오사이언스",
+   "code": "302440",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "001450.KS": {
+   "name": "현대해상",
+   "code": "001450",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "035250.KS": {
+   "name": "강원랜드",
+   "code": "035250",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "052690.KS": {
+   "name": "한전기술",
+   "code": "052690",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "026960.KS": {
+   "name": "동서",
+   "code": "026960",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "017800.KS": {
+   "name": "현대엘리베이터",
+   "code": "017800",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "009420.KS": {
+   "name": "한올바이오파마",
+   "code": "009420",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "251270.KS": {
+   "name": "넷마블",
+   "code": "251270",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "028670.KS": {
+   "name": "팬오션",
+   "code": "028670",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "097950.KS": {
+   "name": "CJ제일제당",
+   "code": "097950",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "139130.KS": {
+   "name": "iM금융지주",
+   "code": "139130",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "161890.KS": {
+   "name": "한국콜마",
+   "code": "161890",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "011780.KS": {
+   "name": "금호석유화학",
+   "code": "011780",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "282330.KS": {
+   "name": "BGF리테일",
+   "code": "282330",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "457190.KS": {
+   "name": "이수스페셜티케미컬",
+   "code": "457190",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "004170.KS": {
+   "name": "신세계",
+   "code": "004170",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "383220.KS": {
+   "name": "F&F",
+   "code": "383220",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "004370.KS": {
+   "name": "농심",
+   "code": "004370",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "004990.KS": {
+   "name": "롯데지주",
+   "code": "004990",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "082740.KS": {
+   "name": "한화엔진",
+   "code": "082740",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "005850.KS": {
+   "name": "에스엘",
+   "code": "005850",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "023530.KS": {
+   "name": "롯데쇼핑",
+   "code": "023530",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "009970.KS": {
+   "name": "영원무역홀딩스",
+   "code": "009970",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "007340.KS": {
+   "name": "DN오토모티브",
+   "code": "007340",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "375500.KS": {
+   "name": "DL이앤씨",
+   "code": "375500",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "450080.KS": {
+   "name": "에코프로머티",
+   "code": "450080",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "002790.KS": {
+   "name": "아모레퍼시픽홀딩스",
+   "code": "002790",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "000240.KS": {
+   "name": "한국앤컴퍼니",
+   "code": "000240",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "081660.KS": {
+   "name": "미스토홀딩스",
+   "code": "081660",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "011170.KS": {
+   "name": "롯데케미칼",
+   "code": "011170",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "014680.KS": {
+   "name": "한솔케미칼",
+   "code": "014680",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "112610.KS": {
+   "name": "씨에스윈드",
+   "code": "112610",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "030000.KS": {
+   "name": "제일기획",
+   "code": "030000",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "007070.KS": {
+   "name": "GS리테일",
+   "code": "007070",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "069960.KS": {
+   "name": "현대백화점",
+   "code": "069960",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "139480.KS": {
+   "name": "이마트",
+   "code": "139480",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "204320.KS": {
+   "name": "HL만도",
+   "code": "204320",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "051600.KS": {
+   "name": "한전KPS",
+   "code": "051600",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "073240.KS": {
+   "name": "금호타이어",
+   "code": "073240",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "006280.KS": {
+   "name": "녹십자",
+   "code": "006280",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "000120.KS": {
+   "name": "CJ대한통운",
+   "code": "000120",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "483650.KS": {
+   "name": "달바글로벌",
+   "code": "483650",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "103140.KS": {
+   "name": "풍산",
+   "code": "103140",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "006040.KS": {
+   "name": "동원산업",
+   "code": "006040",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "001800.KS": {
+   "name": "오리온홀딩스",
+   "code": "001800",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "008770.KS": {
+   "name": "호텔신라",
+   "code": "008770",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "011210.KS": {
+   "name": "현대위아",
+   "code": "011210",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "298020.KS": {
+   "name": "효성티앤씨",
+   "code": "298020",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "071970.KS": {
+   "name": "HD현대마린엔진",
+   "code": "071970",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "192080.KS": {
+   "name": "더블유게임즈",
+   "code": "192080",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "300720.KS": {
+   "name": "한일시멘트",
+   "code": "300720",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "007310.KS": {
+   "name": "오뚜기",
+   "code": "007310",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "069620.KS": {
+   "name": "대웅제약",
+   "code": "069620",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "280360.KS": {
+   "name": "롯데웰푸드",
+   "code": "280360",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "000080.KS": {
+   "name": "하이트진로",
+   "code": "000080",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "001430.KS": {
+   "name": "세아베스틸지주",
+   "code": "001430",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "120110.KS": {
+   "name": "코오롱인더",
+   "code": "120110",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "361610.KS": {
+   "name": "SK아이이테크놀로지",
+   "code": "361610",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "093370.KS": {
+   "name": "후성",
+   "code": "093370",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "003240.KS": {
+   "name": "태광산업",
+   "code": "003240",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "034230.KS": {
+   "name": "파라다이스",
+   "code": "034230",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "005300.KS": {
+   "name": "롯데칠성",
+   "code": "005300",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "003090.KS": {
+   "name": "대웅",
+   "code": "003090",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "000210.KS": {
+   "name": "DL",
+   "code": "000210",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "137310.KS": {
+   "name": "에스디바이오센서",
+   "code": "137310",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "009240.KS": {
+   "name": "한샘",
+   "code": "009240",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "004000.KS": {
+   "name": "롯데정밀화학",
+   "code": "004000",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "185750.KS": {
+   "name": "종근당",
+   "code": "185750",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "071320.KS": {
+   "name": "지역난방공사",
+   "code": "071320",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "017960.KS": {
+   "name": "한국카본",
+   "code": "017960",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "298050.KS": {
+   "name": "HS효성첨단소재",
+   "code": "298050",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "285130.KS": {
+   "name": "SK케미칼",
+   "code": "285130",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "0220W0.KS": {
+   "name": "한화머시너리앤서비스홀딩스",
+   "code": "0220W0",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "268280.KS": {
+   "name": "미원에스씨",
+   "code": "268280",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "014820.KS": {
+   "name": "동원시스템즈",
+   "code": "014820",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "001680.KS": {
+   "name": "대상",
+   "code": "001680",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "006650.KS": {
+   "name": "대한유화",
+   "code": "006650",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "069260.KS": {
+   "name": "TKG휴켐스",
+   "code": "069260",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "002840.KS": {
+   "name": "미원상사",
+   "code": "002840",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "000670.KS": {
+   "name": "영풍",
+   "code": "000670",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "456040.KS": {
+   "name": "OCI",
+   "code": "456040",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "003030.KS": {
+   "name": "세아제강지주",
+   "code": "003030",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "002030.KS": {
+   "name": "아세아",
+   "code": "002030",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "005420.KS": {
+   "name": "코스모화학",
+   "code": "005420",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "008730.KS": {
+   "name": "율촌화학",
+   "code": "008730",
+   "market": "KOSPI",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSPI200(current)"
+  },
+  "196170.KQ": {
+   "name": "알테오젠",
+   "code": "196170",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "086520.KQ": {
+   "name": "에코프로",
+   "code": "086520",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "247540.KQ": {
+   "name": "에코프로비엠",
+   "code": "247540",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "036930.KQ": {
+   "name": "주성엔지니어링",
+   "code": "036930",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "277810.KQ": {
+   "name": "레인보우로보틱스",
+   "code": "277810",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "222800.KQ": {
+   "name": "심텍",
+   "code": "222800",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "039030.KQ": {
+   "name": "이오테크닉스",
+   "code": "039030",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "000250.KQ": {
+   "name": "삼천당제약",
+   "code": "000250",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "058470.KQ": {
+   "name": "리노공업",
+   "code": "058470",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "028300.KQ": {
+   "name": "HLB",
+   "code": "028300",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "240810.KQ": {
+   "name": "원익IPS",
+   "code": "240810",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "108490.KQ": {
+   "name": "로보티즈",
+   "code": "108490",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "403870.KQ": {
+   "name": "HPSP",
+   "code": "403870",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "031980.KQ": {
+   "name": "피에스케이홀딩스",
+   "code": "031980",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "095340.KQ": {
+   "name": "ISC",
+   "code": "095340",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "319660.KQ": {
+   "name": "피에스케이",
+   "code": "319660",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "131290.KQ": {
+   "name": "티에스이",
+   "code": "131290",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "214450.KQ": {
+   "name": "파마리서치",
+   "code": "214450",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "030530.KQ": {
+   "name": "원익홀딩스",
+   "code": "030530",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "145020.KQ": {
+   "name": "휴젤",
+   "code": "145020",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "141080.KQ": {
+   "name": "리가켐바이오",
+   "code": "141080",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "357780.KQ": {
+   "name": "솔브레인",
+   "code": "357780",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "298380.KQ": {
+   "name": "에이비엘바이오",
+   "code": "298380",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "087010.KQ": {
+   "name": "펩트론",
+   "code": "087010",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "064760.KQ": {
+   "name": "티씨케이",
+   "code": "064760",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "080220.KQ": {
+   "name": "제주반도체",
+   "code": "080220",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "010170.KQ": {
+   "name": "대한광통신",
+   "code": "010170",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "140410.KQ": {
+   "name": "메지온",
+   "code": "140410",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "178320.KQ": {
+   "name": "서진시스템",
+   "code": "178320",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "310210.KQ": {
+   "name": "보로노이",
+   "code": "310210",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "005290.KQ": {
+   "name": "동진쎄미켐",
+   "code": "005290",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "347850.KQ": {
+   "name": "디앤디파마텍",
+   "code": "347850",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "067310.KQ": {
+   "name": "하나마이크론",
+   "code": "067310",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "226950.KQ": {
+   "name": "올릭스",
+   "code": "226950",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "084370.KQ": {
+   "name": "유진테크",
+   "code": "084370",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "068760.KQ": {
+   "name": "셀트리온제약",
+   "code": "068760",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "440110.KQ": {
+   "name": "파두",
+   "code": "440110",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "043260.KQ": {
+   "name": "성호전자",
+   "code": "043260",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "041510.KQ": {
+   "name": "에스엠",
+   "code": "041510",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "319400.KQ": {
+   "name": "현대무벡스",
+   "code": "319400",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "098460.KQ": {
+   "name": "고영",
+   "code": "098460",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "095610.KQ": {
+   "name": "테스",
+   "code": "095610",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "263750.KQ": {
+   "name": "펄어비스",
+   "code": "263750",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "058610.KQ": {
+   "name": "에스피지",
+   "code": "058610",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "257720.KQ": {
+   "name": "실리콘투",
+   "code": "257720",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "035900.KQ": {
+   "name": "JYP Ent.",
+   "code": "035900",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "214150.KQ": {
+   "name": "클래시스",
+   "code": "214150",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "214370.KQ": {
+   "name": "케어젠",
+   "code": "214370",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "437730.KQ": {
+   "name": "삼현",
+   "code": "437730",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "036540.KQ": {
+   "name": "SFA반도체",
+   "code": "036540",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "323280.KQ": {
+   "name": "태성",
+   "code": "323280",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "237690.KQ": {
+   "name": "에스티팜",
+   "code": "237690",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "032820.KQ": {
+   "name": "우리기술",
+   "code": "032820",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "131970.KQ": {
+   "name": "두산테스나",
+   "code": "131970",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "218410.KQ": {
+   "name": "RFHIC",
+   "code": "218410",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "140860.KQ": {
+   "name": "파크시스템스",
+   "code": "140860",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "089030.KQ": {
+   "name": "테크윙",
+   "code": "089030",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "007390.KQ": {
+   "name": "네이처셀",
+   "code": "007390",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "078600.KQ": {
+   "name": "대주전자재료",
+   "code": "078600",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "039200.KQ": {
+   "name": "오스코텍",
+   "code": "039200",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "060370.KQ": {
+   "name": "LS마린솔루션",
+   "code": "060370",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "003380.KQ": {
+   "name": "하림지주",
+   "code": "003380",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "290650.KQ": {
+   "name": "엘앤씨바이오",
+   "code": "290650",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "053800.KQ": {
+   "name": "안랩",
+   "code": "053800",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "293490.KQ": {
+   "name": "카카오게임즈",
+   "code": "293490",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "083650.KQ": {
+   "name": "비에이치아이",
+   "code": "083650",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "0009K0.KQ": {
+   "name": "에임드바이오",
+   "code": "0009K0",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "096530.KQ": {
+   "name": "씨젠",
+   "code": "096530",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "328130.KQ": {
+   "name": "루닛",
+   "code": "328130",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "425420.KQ": {
+   "name": "티에프이",
+   "code": "425420",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "204270.KQ": {
+   "name": "제이앤티씨",
+   "code": "204270",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "089970.KQ": {
+   "name": "브이엠",
+   "code": "089970",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "183300.KQ": {
+   "name": "코미코",
+   "code": "183300",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "086450.KQ": {
+   "name": "동국제약",
+   "code": "086450",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "232140.KQ": {
+   "name": "와이씨",
+   "code": "232140",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "950160.KQ": {
+   "name": "코오롱티슈진",
+   "code": "950160",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "356860.KQ": {
+   "name": "티엘비",
+   "code": "356860",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "195940.KQ": {
+   "name": "HK이노엔",
+   "code": "195940",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "252990.KQ": {
+   "name": "샘씨엔에스",
+   "code": "252990",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "420770.KQ": {
+   "name": "기가비스",
+   "code": "420770",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "950260.KQ": {
+   "name": "인제니아테라퓨틱스(Reg.S)",
+   "code": "950260",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "241710.KQ": {
+   "name": "코스메카코리아",
+   "code": "241710",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "166090.KQ": {
+   "name": "하나머티리얼즈",
+   "code": "166090",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "082920.KQ": {
+   "name": "비츠로셀",
+   "code": "082920",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "251970.KQ": {
+   "name": "펌텍코리아",
+   "code": "251970",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "121600.KQ": {
+   "name": "나노신소재",
+   "code": "121600",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "056190.KQ": {
+   "name": "SFA",
+   "code": "056190",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "035760.KQ": {
+   "name": "CJ ENM",
+   "code": "035760",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "065350.KQ": {
+   "name": "신성델타테크",
+   "code": "065350",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "491000.KQ": {
+   "name": "리브스메드",
+   "code": "491000",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "093320.KQ": {
+   "name": "케이아이엔엑스",
+   "code": "093320",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "347700.KQ": {
+   "name": "스피어",
+   "code": "347700",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "122870.KQ": {
+   "name": "와이지엔터테인먼트",
+   "code": "122870",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "445680.KQ": {
+   "name": "큐리옥스바이오시스템즈",
+   "code": "445680",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "036830.KQ": {
+   "name": "솔브레인홀딩스",
+   "code": "036830",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "101490.KQ": {
+   "name": "에스앤에스텍",
+   "code": "101490",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "171090.KQ": {
+   "name": "선익시스템",
+   "code": "171090",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "092870.KQ": {
+   "name": "엑시콘",
+   "code": "092870",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "083450.KQ": {
+   "name": "GST",
+   "code": "083450",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "032500.KQ": {
+   "name": "케이엠더블유",
+   "code": "032500",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "031330.KQ": {
+   "name": "에스에이엠티",
+   "code": "031330",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "074600.KQ": {
+   "name": "원익QnC",
+   "code": "074600",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "059090.KQ": {
+   "name": "미코",
+   "code": "059090",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "100790.KQ": {
+   "name": "미래에셋벤처투자",
+   "code": "100790",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "281740.KQ": {
+   "name": "레이크머티리얼즈",
+   "code": "281740",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "219130.KQ": {
+   "name": "타이거일렉",
+   "code": "219130",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "064290.KQ": {
+   "name": "인텍플러스",
+   "code": "064290",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "253590.KQ": {
+   "name": "네오셈",
+   "code": "253590",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "085660.KQ": {
+   "name": "차바이오텍",
+   "code": "085660",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "0158S0.KQ": {
+   "name": "엘리스",
+   "code": "0158S0",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "253450.KQ": {
+   "name": "스튜디오드래곤",
+   "code": "253450",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "099320.KQ": {
+   "name": "쎄트렉아이",
+   "code": "099320",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "127120.KQ": {
+   "name": "제이에스링크",
+   "code": "127120",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "417200.KQ": {
+   "name": "LS머트리얼즈",
+   "code": "417200",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "295310.KQ": {
+   "name": "에이치브이엠",
+   "code": "295310",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "079940.KQ": {
+   "name": "가비아",
+   "code": "079940",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "388720.KQ": {
+   "name": "유일로보틱스",
+   "code": "388720",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "126340.KQ": {
+   "name": "비나텍",
+   "code": "126340",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "006730.KQ": {
+   "name": "서부T&D",
+   "code": "006730",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "468530.KQ": {
+   "name": "프로티나",
+   "code": "468530",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "041960.KQ": {
+   "name": "코미팜",
+   "code": "041960",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "032190.KQ": {
+   "name": "다우데이타",
+   "code": "032190",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "102710.KQ": {
+   "name": "이엔에프테크놀로지",
+   "code": "102710",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "053610.KQ": {
+   "name": "프로텍",
+   "code": "053610",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "144960.KQ": {
+   "name": "뉴파워프라즈마",
+   "code": "144960",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "137400.KQ": {
+   "name": "피엔티",
+   "code": "137400",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "119850.KQ": {
+   "name": "지엔씨에너지",
+   "code": "119850",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "161580.KQ": {
+   "name": "필옵틱스",
+   "code": "161580",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "048410.KQ": {
+   "name": "현대바이오",
+   "code": "048410",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "023160.KQ": {
+   "name": "태광",
+   "code": "023160",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "038500.KQ": {
+   "name": "삼표시멘트",
+   "code": "038500",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "033100.KQ": {
+   "name": "제룡전기",
+   "code": "033100",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "089890.KQ": {
+   "name": "코세스",
+   "code": "089890",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "456160.KQ": {
+   "name": "지투지바이오",
+   "code": "456160",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "476060.KQ": {
+   "name": "온코닉테라퓨틱스",
+   "code": "476060",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "476830.KQ": {
+   "name": "알지노믹스",
+   "code": "476830",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "090710.KQ": {
+   "name": "휴림로봇",
+   "code": "090710",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "222080.KQ": {
+   "name": "SFA넥셀",
+   "code": "222080",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "036810.KQ": {
+   "name": "에프에스티",
+   "code": "036810",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "290550.KQ": {
+   "name": "디케이티",
+   "code": "290550",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "014620.KQ": {
+   "name": "성광벤드",
+   "code": "014620",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "115180.KQ": {
+   "name": "큐리언트",
+   "code": "115180",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "090360.KQ": {
+   "name": "로보스타",
+   "code": "090360",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "122640.KQ": {
+   "name": "예스티",
+   "code": "122640",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "189300.KQ": {
+   "name": "인텔리안테크",
+   "code": "189300",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "458870.KQ": {
+   "name": "씨어스",
+   "code": "458870",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "466100.KQ": {
+   "name": "클로봇",
+   "code": "466100",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "213420.KQ": {
+   "name": "덕산네오룩스",
+   "code": "213420",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "327260.KQ": {
+   "name": "RF머트리얼즈",
+   "code": "327260",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  },
+  "033790.KQ": {
+   "name": "피노",
+   "code": "033790",
+   "market": "KOSDAQ",
+   "member": [
+    [
+     "2016-01-01",
+     "2026-11-13"
+    ]
+   ],
+   "source": "KOSDAQ_top150(current)"
+  }
+ }
+}

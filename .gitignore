@@ -20,3 +20,10 @@ cache/
 .vercel/
 
 .vercel
+
+# Claude Code local settings
+.claude/settings.local.json
+models_archive/
+
+# 학습 데이터 스냅샷 (build_snapshot.py)
+data/

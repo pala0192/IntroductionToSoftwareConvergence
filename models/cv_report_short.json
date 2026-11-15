@@ -1,0 +1,238 @@
+{
+  "period": "short",
+  "holding_days": 20,
+  "purge_days": 20,
+  "scheme": {
+    "type": "walk_forward_expanding",
+    "test_days": 252,
+    "min_train_days": 756,
+    "inner_val_days": 252
+  },
+  "source": {
+    "snapshot": "v2-wide",
+    "start": "2016-01-01",
+    "end": "2026-11-13",
+    "universe_mode": "current",
+    "survivorship_biased": true,
+    "universe_size": 351,
+    "loaded": 348,
+    "failed": 3
+  },
+  "dataset": {
+    "rows_valid": 704779,
+    "rows_in_membership": 704779,
+    "rows_final": 704297,
+    "min_tickers_per_date": 100,
+    "trading_days": 2367,
+    "tickers": 344,
+    "date_from": "2017-01-18",
+    "date_to": "2026-10-16",
+    "positive_ratio": 0.3015
+  },
+  "oof": {
+    "rows": 422214,
+    "trading_days": 1319,
+    "date_from": "2021-05-06",
+    "date_to": "2026-10-16"
+  },
+  "final_model": {
+    "rows": 704297,
+    "n_estimators": 376
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "best_iteration": 13,
+      "train": {
+        "rows": 197510,
+        "trading_days": 756,
+        "date_from": "2017-01-18",
+        "date_to": "2020-02-26",
+        "tickers": 286,
+        "positive_ratio": 0.3016,
+        "target_positive_ratio": 0.2889
+      },
+      "val": {
+        "rows": 73034,
+        "trading_days": 252,
+        "date_from": "2020-03-30",
+        "date_to": "2021-04-06",
+        "tickers": 294,
+        "positive_ratio": 0.3012,
+        "target_positive_ratio": 0.4404
+      },
+      "test": {
+        "rows": 74146,
+        "trading_days": 252,
+        "date_from": "2021-05-06",
+        "date_to": "2022-05-31",
+        "tickers": 303,
+        "positive_ratio": 0.3015,
+        "target_positive_ratio": 0.2411
+      },
+      "test_metrics": {
+        "auc": 0.5236,
+        "logloss": 0.6117,
+        "brier": 0.2104
+      }
+    },
+    {
+      "fold": 2,
+      "best_iteration": 139,
+      "train": {
+        "rows": 270360,
+        "trading_days": 1008,
+        "date_from": "2017-01-18",
+        "date_to": "2021-03-09",
+        "tickers": 295,
+        "positive_ratio": 0.3015,
+        "target_positive_ratio": 0.3306
+      },
+      "val": {
+        "rows": 73971,
+        "trading_days": 252,
+        "date_from": "2021-04-07",
+        "date_to": "2022-04-29",
+        "tickers": 303,
+        "positive_ratio": 0.3015,
+        "target_positive_ratio": 0.2582
+      },
+      "test": {
+        "rows": 78571,
+        "trading_days": 252,
+        "date_from": "2022-06-02",
+        "date_to": "2023-06-08",
+        "tickers": 318,
+        "positive_ratio": 0.3015,
+        "target_positive_ratio": 0.3213
+      },
+      "test_metrics": {
+        "auc": 0.5334,
+        "logloss": 0.6104,
+        "brier": 0.2099
+      }
+    },
+    {
+      "fold": 3,
+      "best_iteration": 534,
+      "train": {
+        "rows": 344191,
+        "trading_days": 1260,
+        "date_from": "2017-01-18",
+        "date_to": "2022-04-01",
+        "tickers": 303,
+        "positive_ratio": 0.3015,
+        "target_positive_ratio": 0.3201
+      },
+      "val": {
+        "rows": 78265,
+        "trading_days": 252,
+        "date_from": "2022-05-02",
+        "date_to": "2023-05-09",
+        "tickers": 318,
+        "positive_ratio": 0.3015,
+        "target_positive_ratio": 0.3043
+      },
+      "test": {
+        "rows": 80878,
+        "trading_days": 252,
+        "date_from": "2023-06-09",
+        "date_to": "2024-06-19",
+        "tickers": 324,
+        "positive_ratio": 0.3016,
+        "target_positive_ratio": 0.3152
+      },
+      "test_metrics": {
+        "auc": 0.5368,
+        "logloss": 0.6114,
+        "brier": 0.2103
+      }
+    },
+    {
+      "fold": 4,
+      "best_iteration": 375,
+      "train": {
+        "rows": 422112,
+        "trading_days": 1512,
+        "date_from": "2017-01-18",
+        "date_to": "2023-04-07",
+        "tickers": 318,
+        "positive_ratio": 0.3015,
+        "target_positive_ratio": 0.3159
+      },
+      "val": {
+        "rows": 80776,
+        "trading_days": 252,
+        "date_from": "2023-05-10",
+        "date_to": "2024-05-21",
+        "tickers": 322,
+        "positive_ratio": 0.3017,
+        "target_positive_ratio": 0.3199
+      },
+      "test": {
+        "rows": 82951,
+        "trading_days": 252,
+        "date_from": "2024-06-20",
+        "date_to": "2025-07-04",
+        "tickers": 335,
+        "positive_ratio": 0.3016,
+        "target_positive_ratio": 0.3501
+      },
+      "test_metrics": {
+        "auc": 0.5511,
+        "logloss": 0.6086,
+        "brier": 0.2091
+      }
+    },
+    {
+      "fold": 5,
+      "best_iteration": 432,
+      "train": {
+        "rows": 502804,
+        "trading_days": 1764,
+        "date_from": "2017-01-18",
+        "date_to": "2024-04-18",
+        "tickers": 322,
+        "positive_ratio": 0.3015,
+        "target_positive_ratio": 0.3159
+      },
+      "val": {
+        "rows": 82696,
+        "trading_days": 252,
+        "date_from": "2024-05-22",
+        "date_to": "2025-06-05",
+        "tickers": 335,
+        "positive_ratio": 0.3016,
+        "target_positive_ratio": 0.3379
+      },
+      "test": {
+        "rows": 105668,
+        "trading_days": 311,
+        "date_from": "2025-07-07",
+        "date_to": "2026-10-16",
+        "tickers": 344,
+        "positive_ratio": 0.3016,
+        "target_positive_ratio": 0.3656
+      },
+      "test_metrics": {
+        "auc": 0.5178,
+        "logloss": 0.6157,
+        "brier": 0.2121
+      }
+    }
+  ],
+  "cv_summary": {
+    "auc": {
+      "mean": 0.5325,
+      "std": 0.0115
+    },
+    "logloss": {
+      "mean": 0.6116,
+      "std": 0.0023
+    },
+    "brier": {
+      "mean": 0.2104,
+      "std": 0.001
+    }
+  }
+}

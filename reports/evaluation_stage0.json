@@ -1,0 +1,698 @@
+{
+  "eval_tickers": [
+    "373220.KS",
+    "034020.KS",
+    "068270.KS",
+    "138040.KS",
+    "003230.KS"
+  ],
+  "news": "excluded (neutral)",
+  "results": {
+    "short": {
+      "holding_days": 20,
+      "target_return_pct": 5.0,
+      "logreg_fit": {
+        "C": 0.001,
+        "val_logloss": 0.6392,
+        "coefficients": [
+          {
+            "feature": "atr_pct",
+            "coef": 0.3028
+          },
+          {
+            "feature": "bb_width",
+            "coef": 0.0916
+          },
+          {
+            "feature": "stoch_k",
+            "coef": 0.0757
+          },
+          {
+            "feature": "stoch_d",
+            "coef": 0.0533
+          },
+          {
+            "feature": "vol_20",
+            "coef": 0.0431
+          },
+          {
+            "feature": "ret_20",
+            "coef": -0.0424
+          },
+          {
+            "feature": "sig_atr",
+            "coef": -0.035
+          },
+          {
+            "feature": "ret_60",
+            "coef": -0.034
+          },
+          {
+            "feature": "ret_5",
+            "coef": 0.0324
+          },
+          {
+            "feature": "dist_ema60",
+            "coef": -0.032
+          },
+          {
+            "feature": "sig_ema120",
+            "coef": 0.0307
+          },
+          {
+            "feature": "dist_ema20",
+            "coef": -0.0302
+          },
+          {
+            "feature": "rsi",
+            "coef": -0.0299
+          },
+          {
+            "feature": "sig_rsi",
+            "coef": 0.0233
+          },
+          {
+            "feature": "sig_ema20",
+            "coef": 0.0197
+          },
+          {
+            "feature": "sig_stoch",
+            "coef": 0.0197
+          },
+          {
+            "feature": "volume_ratio",
+            "coef": 0.0178
+          },
+          {
+            "feature": "bb_pctb",
+            "coef": -0.0139
+          },
+          {
+            "feature": "dist_ema120",
+            "coef": -0.0139
+          },
+          {
+            "feature": "macd_hist_pct",
+            "coef": -0.01
+          },
+          {
+            "feature": "sig_bollinger",
+            "coef": 0.0094
+          },
+          {
+            "feature": "sig_ema60",
+            "coef": -0.0042
+          },
+          {
+            "feature": "sig_macd",
+            "coef": 0.0009
+          }
+        ]
+      },
+      "full_test": {
+        "n": 8450,
+        "date_from": "2025-05-27",
+        "date_to": "2026-10-16",
+        "models": {
+          "xgb": {
+            "n": 8450,
+            "auc": 0.5183,
+            "logloss": 0.6537,
+            "brier": 0.2303,
+            "brier_baseline": 0.2176,
+            "brier_skill": -0.0584,
+            "mean_pred_pct": 36.9,
+            "actual_rate_pct": 32.0,
+            "top20_hit_rate_pct": 32.2
+          },
+          "logreg": {
+            "n": 8450,
+            "auc": 0.5053,
+            "logloss": 0.6633,
+            "brier": 0.235,
+            "brier_baseline": 0.2176,
+            "brier_skill": -0.0801,
+            "mean_pred_pct": 37.3,
+            "actual_rate_pct": 32.0,
+            "top20_hit_rate_pct": 32.1
+          }
+        }
+      },
+      "weights_pct": {
+        "xgb": 9,
+        "logreg": 3
+      },
+      "eval_set": {
+        "n": 1690,
+        "date_from": "2025-05-27",
+        "date_to": "2026-10-16",
+        "hv_only": {
+          "n": 1690,
+          "auc": 0.4276,
+          "logloss": 0.6707,
+          "brier": 0.2386,
+          "brier_baseline": 0.2276,
+          "brier_skill": -0.0484,
+          "mean_pred_pct": 39.5,
+          "actual_rate_pct": 35.0,
+          "top20_hit_rate_pct": 24.6
+        },
+        "models": {
+          "xgb": {
+            "indicator": {
+              "n": 1690,
+              "auc": 0.5254,
+              "logloss": 0.6569,
+              "brier": 0.2309,
+              "brier_baseline": 0.2276,
+              "brier_skill": -0.0146,
+              "mean_pred_pct": 35.4,
+              "actual_rate_pct": 35.0,
+              "top20_hit_rate_pct": 39.6,
+              "spearman_vs_fwd_return": 0.0081
+            },
+            "total": {
+              "n": 1690,
+              "auc": 0.4439,
+              "logloss": 0.6676,
+              "brier": 0.237,
+              "brier_baseline": 0.2276,
+              "brier_skill": -0.0415,
+              "mean_pred_pct": 39.1,
+              "actual_rate_pct": 35.0,
+              "top20_hit_rate_pct": 28.9,
+              "score_spearman_vs_fwd_return": -0.154,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 678,
+                  "share_pct": 40.1,
+                  "hit_rate_pct": 35.4,
+                  "mean_fwd_return_pct": 1.37
+                },
+                {
+                  "grade": "관망",
+                  "n": 1012,
+                  "share_pct": 59.9,
+                  "hit_rate_pct": 34.8,
+                  "mean_fwd_return_pct": 1.8
+                },
+                {
+                  "grade": "회피",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                }
+              ],
+              "buy_interest_precision_pct": 35.4,
+              "buy_interest_n": 678
+            },
+            "per_ticker": [
+              {
+                "name": "LG에너지솔루션",
+                "n": 338,
+                "actual_rate_pct": 41.1,
+                "indicator_auc": 0.5341,
+                "total_auc": 0.4008
+              },
+              {
+                "name": "두산에너빌리티",
+                "n": 338,
+                "actual_rate_pct": 39.9,
+                "indicator_auc": 0.4964,
+                "total_auc": 0.3843
+              },
+              {
+                "name": "셀트리온",
+                "n": 338,
+                "actual_rate_pct": 34.3,
+                "indicator_auc": 0.3694,
+                "total_auc": 0.2882
+              },
+              {
+                "name": "메리츠금융지주",
+                "n": 338,
+                "actual_rate_pct": 28.7,
+                "indicator_auc": 0.5342,
+                "total_auc": 0.3285
+              },
+              {
+                "name": "삼양식품",
+                "n": 338,
+                "actual_rate_pct": 31.1,
+                "indicator_auc": 0.5853,
+                "total_auc": 0.404
+              }
+            ]
+          },
+          "logreg": {
+            "indicator": {
+              "n": 1690,
+              "auc": 0.5201,
+              "logloss": 0.6581,
+              "brier": 0.232,
+              "brier_baseline": 0.2276,
+              "brier_skill": -0.0192,
+              "mean_pred_pct": 35.2,
+              "actual_rate_pct": 35.0,
+              "top20_hit_rate_pct": 42.3,
+              "spearman_vs_fwd_return": -0.01
+            },
+            "total": {
+              "n": 1690,
+              "auc": 0.4298,
+              "logloss": 0.6698,
+              "brier": 0.2382,
+              "brier_baseline": 0.2276,
+              "brier_skill": -0.0464,
+              "mean_pred_pct": 39.4,
+              "actual_rate_pct": 35.0,
+              "top20_hit_rate_pct": 24.0,
+              "score_spearman_vs_fwd_return": -0.1579,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 699,
+                  "share_pct": 41.4,
+                  "hit_rate_pct": 34.9,
+                  "mean_fwd_return_pct": 1.34
+                },
+                {
+                  "grade": "관망",
+                  "n": 991,
+                  "share_pct": 58.6,
+                  "hit_rate_pct": 35.1,
+                  "mean_fwd_return_pct": 1.84
+                },
+                {
+                  "grade": "회피",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                }
+              ],
+              "buy_interest_precision_pct": 34.9,
+              "buy_interest_n": 699
+            },
+            "per_ticker": [
+              {
+                "name": "LG에너지솔루션",
+                "n": 338,
+                "actual_rate_pct": 41.1,
+                "indicator_auc": 0.5015,
+                "total_auc": 0.3667
+              },
+              {
+                "name": "두산에너빌리티",
+                "n": 338,
+                "actual_rate_pct": 39.9,
+                "indicator_auc": 0.4682,
+                "total_auc": 0.3506
+              },
+              {
+                "name": "셀트리온",
+                "n": 338,
+                "actual_rate_pct": 34.3,
+                "indicator_auc": 0.369,
+                "total_auc": 0.2543
+              },
+              {
+                "name": "메리츠금융지주",
+                "n": 338,
+                "actual_rate_pct": 28.7,
+                "indicator_auc": 0.5527,
+                "total_auc": 0.3568
+              },
+              {
+                "name": "삼양식품",
+                "n": 338,
+                "actual_rate_pct": 31.1,
+                "indicator_auc": 0.6184,
+                "total_auc": 0.3571
+              }
+            ]
+          }
+        }
+      }
+    },
+    "long": {
+      "holding_days": 100,
+      "target_return_pct": 13.0,
+      "logreg_fit": {
+        "C": 0.001,
+        "val_logloss": 0.6903,
+        "coefficients": [
+          {
+            "feature": "atr_pct",
+            "coef": 0.3721
+          },
+          {
+            "feature": "bb_width",
+            "coef": 0.1149
+          },
+          {
+            "feature": "vol_20",
+            "coef": 0.1123
+          },
+          {
+            "feature": "sig_ema120",
+            "coef": 0.066
+          },
+          {
+            "feature": "dist_ema120",
+            "coef": -0.0511
+          },
+          {
+            "feature": "volume_ratio",
+            "coef": 0.0428
+          },
+          {
+            "feature": "rsi",
+            "coef": 0.0422
+          },
+          {
+            "feature": "sig_ema60",
+            "coef": 0.0417
+          },
+          {
+            "feature": "sig_ema20",
+            "coef": 0.039
+          },
+          {
+            "feature": "sig_bollinger",
+            "coef": 0.0321
+          },
+          {
+            "feature": "sig_rsi",
+            "coef": -0.0293
+          },
+          {
+            "feature": "bb_pctb",
+            "coef": -0.0285
+          },
+          {
+            "feature": "ret_60",
+            "coef": -0.0257
+          },
+          {
+            "feature": "sig_atr",
+            "coef": -0.0223
+          },
+          {
+            "feature": "stoch_d",
+            "coef": -0.0141
+          },
+          {
+            "feature": "sig_macd",
+            "coef": 0.0092
+          },
+          {
+            "feature": "macd_hist_pct",
+            "coef": 0.0089
+          },
+          {
+            "feature": "sig_stoch",
+            "coef": 0.007
+          },
+          {
+            "feature": "dist_ema60",
+            "coef": 0.0055
+          },
+          {
+            "feature": "dist_ema20",
+            "coef": 0.0044
+          },
+          {
+            "feature": "ret_20",
+            "coef": -0.0041
+          },
+          {
+            "feature": "ret_5",
+            "coef": 0.0025
+          },
+          {
+            "feature": "stoch_k",
+            "coef": -0.001
+          }
+        ]
+      },
+      "full_test": {
+        "n": 8150,
+        "date_from": "2025-02-14",
+        "date_to": "2026-06-18",
+        "models": {
+          "xgb": {
+            "n": 8150,
+            "auc": 0.5046,
+            "logloss": 0.7074,
+            "brier": 0.2539,
+            "brier_baseline": 0.2379,
+            "brier_skill": -0.0674,
+            "mean_pred_pct": 34.3,
+            "actual_rate_pct": 39.0,
+            "top20_hit_rate_pct": 31.5
+          },
+          "logreg": {
+            "n": 8150,
+            "auc": 0.4934,
+            "logloss": 0.7284,
+            "brier": 0.2652,
+            "brier_baseline": 0.2379,
+            "brier_skill": -0.1148,
+            "mean_pred_pct": 34.4,
+            "actual_rate_pct": 39.0,
+            "top20_hit_rate_pct": 27.2
+          }
+        }
+      },
+      "weights_pct": {
+        "xgb": 2,
+        "logreg": 0
+      },
+      "eval_set": {
+        "n": 1630,
+        "date_from": "2025-02-14",
+        "date_to": "2026-06-18",
+        "hv_only": {
+          "n": 1630,
+          "auc": 0.4334,
+          "logloss": 0.7108,
+          "brier": 0.2579,
+          "brier_baseline": 0.2219,
+          "brier_skill": -0.1621,
+          "mean_pred_pct": 44.0,
+          "actual_rate_pct": 33.3,
+          "top20_hit_rate_pct": 24.5
+        },
+        "models": {
+          "xgb": {
+            "indicator": {
+              "n": 1630,
+              "auc": 0.5743,
+              "logloss": 0.6416,
+              "brier": 0.2226,
+              "brier_baseline": 0.2219,
+              "brier_skill": -0.0029,
+              "mean_pred_pct": 33.4,
+              "actual_rate_pct": 33.3,
+              "top20_hit_rate_pct": 45.1,
+              "spearman_vs_fwd_return": 0.0018
+            },
+            "total": {
+              "n": 1630,
+              "auc": 0.433,
+              "logloss": 0.7079,
+              "brier": 0.2565,
+              "brier_baseline": 0.2219,
+              "brier_skill": -0.1556,
+              "mean_pred_pct": 43.7,
+              "actual_rate_pct": 33.3,
+              "top20_hit_rate_pct": 25.3,
+              "score_spearman_vs_fwd_return": -0.1507,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 0,
+                  "share_pct": 0.0,
+                  "hit_rate_pct": null,
+                  "mean_fwd_return_pct": null
+                },
+                {
+                  "grade": "관심",
+                  "n": 659,
+                  "share_pct": 40.4,
+                  "hit_rate_pct": 35.7,
+                  "mean_fwd_return_pct": 9.19
+                },
+                {
+                  "grade": "관망",
+                  "n": 917,
+                  "share_pct": 56.3,
+                  "hit_rate_pct": 29.0,
+                  "mean_fwd_return_pct": 13.75
+                },
+                {
+                  "grade": "회피",
+                  "n": 54,
+                  "share_pct": 3.3,
+                  "hit_rate_pct": 75.9,
+                  "mean_fwd_return_pct": 37.22
+                }
+              ],
+              "buy_interest_precision_pct": 35.7,
+              "buy_interest_n": 659
+            },
+            "per_ticker": [
+              {
+                "name": "LG에너지솔루션",
+                "n": 326,
+                "actual_rate_pct": 27.3,
+                "indicator_auc": 0.1757,
+                "total_auc": 0.0923
+              },
+              {
+                "name": "두산에너빌리티",
+                "n": 326,
+                "actual_rate_pct": 63.2,
+                "indicator_auc": 0.4098,
+                "total_auc": 0.0226
+              },
+              {
+                "name": "셀트리온",
+                "n": 326,
+                "actual_rate_pct": 32.8,
+                "indicator_auc": 0.2122,
+                "total_auc": 0.2534
+              },
+              {
+                "name": "메리츠금융지주",
+                "n": 326,
+                "actual_rate_pct": 12.9,
+                "indicator_auc": 0.7699,
+                "total_auc": 0.1317
+              },
+              {
+                "name": "삼양식품",
+                "n": 326,
+                "actual_rate_pct": 30.1,
+                "indicator_auc": 0.6883,
+                "total_auc": 0.2801
+              }
+            ]
+          },
+          "logreg": {
+            "indicator": {
+              "n": 1630,
+              "auc": 0.5622,
+              "logloss": 0.6426,
+              "brier": 0.2241,
+              "brier_baseline": 0.2219,
+              "brier_skill": -0.0096,
+              "mean_pred_pct": 32.7,
+              "actual_rate_pct": 33.3,
+              "top20_hit_rate_pct": 46.0,
+              "spearman_vs_fwd_return": -0.0038
+            },
+            "total": {
+              "n": 1630,
+              "auc": 0.4335,
+              "logloss": 0.7108,
+              "brier": 0.2579,
+              "brier_baseline": 0.2219,
+              "brier_skill": -0.1621,
+              "mean_pred_pct": 44.0,
+              "actual_rate_pct": 33.3,
+              "top20_hit_rate_pct": 24.6,
+              "score_spearman_vs_fwd_return": -0.196,
+              "grades": [
+                {
+                  "grade": "매수",
+                  "n": 1,
+                  "share_pct": 0.1,
+                  "hit_rate_pct": 0.0,
+                  "mean_fwd_return_pct": -20.1
+                },
+                {
+                  "grade": "관심",
+                  "n": 790,
+                  "share_pct": 48.5,
+                  "hit_rate_pct": 30.5,
+                  "mean_fwd_return_pct": 7.47
+                },
+                {
+                  "grade": "관망",
+                  "n": 789,
+                  "share_pct": 48.4,
+                  "hit_rate_pct": 33.2,
+                  "mean_fwd_return_pct": 16.22
+                },
+                {
+                  "grade": "회피",
+                  "n": 50,
+                  "share_pct": 3.1,
+                  "hit_rate_pct": 78.0,
+                  "mean_fwd_return_pct": 40.07
+                }
+              ],
+              "buy_interest_precision_pct": 30.5,
+              "buy_interest_n": 791
+            },
+            "per_ticker": [
+              {
+                "name": "LG에너지솔루션",
+                "n": 326,
+                "actual_rate_pct": 27.3,
+                "indicator_auc": 0.1761,
+                "total_auc": 0.0951
+              },
+              {
+                "name": "두산에너빌리티",
+                "n": 326,
+                "actual_rate_pct": 63.2,
+                "indicator_auc": 0.3758,
+                "total_auc": 0.0219
+              },
+              {
+                "name": "셀트리온",
+                "n": 326,
+                "actual_rate_pct": 32.8,
+                "indicator_auc": 0.2066,
+                "total_auc": 0.2601
+              },
+              {
+                "name": "메리츠금융지주",
+                "n": 326,
+                "actual_rate_pct": 12.9,
+                "indicator_auc": 0.7026,
+                "total_auc": 0.1318
+              },
+              {
+                "name": "삼양식품",
+                "n": 326,
+                "actual_rate_pct": 30.1,
+                "indicator_auc": 0.6892,
+                "total_auc": 0.2678
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

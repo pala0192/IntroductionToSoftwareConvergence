@@ -1,14 +1,15 @@
-pandas
-numpy
-yfinance
-finance-datareader
-ta
-plotly
-tqdm
-flask
-flask-cors
-scipy
-feedparser
-google-genai
-python-dotenv
-requests
+# 서버 실행용 (Vercel 배포도 이 파일을 사용). 학습 도구는 requirements-train.txt
+pandas==3.0.2
+numpy==2.4.4
+yfinance==1.3.0
+ta==0.11.0
+flask==3.1.3
+scipy==1.17.1
+feedparser==6.0.12
+google-genai==2.2.0
+python-dotenv==1.2.2
+requests==2.33.1
+scikit-learn==1.9.1
+# Linux(xgboost 기본 휠은 GPU용 NCCL 수백 MB 포함 → Vercel 함수 용량 초과)에서는 CPU 전용 패키지
+xgboost==3.4.1; sys_platform != "linux"
+xgboost-cpu==3.4.1; sys_platform == "linux"

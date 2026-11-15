@@ -1,0 +1,51 @@
+{
+  "study": "v2-wide_short",
+  "snapshot": "v2-wide",
+  "period": "short",
+  "tune_folds": [
+    1,
+    2,
+    3
+  ],
+  "holdout_folds": [
+    4,
+    5
+  ],
+  "train_sample": 0.25,
+  "best_value": 0.5294,
+  "best_fold_auc": [
+    0.5189,
+    0.5332,
+    0.5359
+  ],
+  "best_iteration": [
+    17,
+    121,
+    355
+  ],
+  "baseline_value": 0.5192,
+  "baseline_fold_auc": [
+    0.5132,
+    0.5211,
+    0.5234
+  ],
+  "n_trials": 80,
+  "n_complete": 17,
+  "n_pruned": 63,
+  "elapsed_sec_this_run": 942,
+  "finished_at": "2026-11-15T17:32:05",
+  "params": {
+    "n_estimators": 2000,
+    "learning_rate": 0.02616663631213172,
+    "max_depth": 4,
+    "min_child_weight": 3.0317176817552314,
+    "subsample": 0.6234992600205115,
+    "colsample_bytree": 0.5545431983838832,
+    "reg_lambda": 1.6763678438816552,
+    "reg_alpha": 0.8267006049261109,
+    "gamma": 0.12416850888486147,
+    "early_stopping_rounds": 234,
+    "es_metric": "logloss",
+    "random_state": 42
+  }
+}
